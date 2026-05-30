@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0](https://github.com/verygoodplugins/whatsapp-mcp/compare/v0.2.1...v0.3.0) (2026-05-30)
+
+
+### Features
+
+* persist inbound quoted_message_id and add reply support to /api/send ([#109](https://github.com/verygoodplugins/whatsapp-mcp/issues/109)) ([f72d352](https://github.com/verygoodplugins/whatsapp-mcp/commit/f72d35220153dcd8b1fc2dfc645447cf0796271c)), closes [#107](https://github.com/verygoodplugins/whatsapp-mcp/issues/107)
+
+
+### Bug Fixes
+
+* **bridge:** handle ProtocolMessage_REVOKE (delete-for-everyone) events ([#99](https://github.com/verygoodplugins/whatsapp-mcp/issues/99)) ([7f4ec42](https://github.com/verygoodplugins/whatsapp-mcp/commit/7f4ec42c455d1716e901b6262a9ff7e3af437b6a))
+
 ## [0.2.1](https://github.com/verygoodplugins/whatsapp-mcp/compare/v0.2.0...v0.2.1) (2026-05-14)
 
 
