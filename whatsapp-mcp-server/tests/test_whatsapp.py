@@ -5,6 +5,7 @@ from unittest.mock import MagicMock, patch
 
 from whatsapp import Chat, Contact, Message, chat_to_dict, contact_to_dict, msg_to_dict
 from whatsapp import _sender_aliases
+from whatsapp import _resolve_lid_to_phone
 
 
 class TestMessageConversion:
@@ -207,3 +208,37 @@ class TestSenderAliases:
             result = _sender_aliases("13232432100")
         assert "13232432100" in result
         assert "13232432100@s.whatsapp.net" in result
+
+
+class TestResolveLIDToPhone:
+    """Tests for _resolve_lid_to_phone — verify it calls the bridge and falls back."""
+
+    def test_resolves_lid_via_bridge(self):
+        mock_resp = MagicMock()
+        mock_resp.ok = True
+        mock_resp.json.return_value = {
+            "phone": "13232432100",
+            "lid": "231241139937355",
+            "aliases": ["13232432100", "13232432100@s.whatsapp.net",
+                        "231241139937355", "231241139937355@lid"],
+        }
+        with patch("whatsapp.requests.get", return_value=mock_resp):
+            result = _resolve_lid_to_phone("231241139937355@lid")
+
+        assert result == "13232432100"
+
+    def test_returns_none_when_bridge_returns_empty_phone(self):
+        mock_resp = MagicMock()
+        mock_resp.ok = True
+        mock_resp.json.return_value = {"phone": "", "lid": "", "aliases": []}
+        with patch("whatsapp.requests.get", return_value=mock_resp):
+            result = _resolve_lid_to_phone("999@lid")
+
+        assert result is None
+
+    def test_falls_back_to_db_when_bridge_unavailable(self):
+        import requests as req_lib
+        with patch("whatsapp.requests.get", side_effect=req_lib.RequestException("down")):
+            result = _resolve_lid_to_phone("231241139937355@lid")
+
+        assert result is None

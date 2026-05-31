@@ -196,17 +196,27 @@ def _sender_aliases(value: str) -> list[str]:
 
 
 def _resolve_lid_to_phone(lid_or_jid: str) -> str | None:
-    """Resolve a WhatsApp LID (linked device identifier) to a phone number.
+    """Resolve a WhatsApp LID to a phone number via the bridge, falling back to DB."""
+    try:
+        resp = requests.get(
+            f"{WHATSAPP_API_BASE_URL}/resolve",
+            params={"jid": lid_or_jid},
+            headers=_bridge_headers(),
+            timeout=5,
+        )
+        if resp.ok:
+            try:
+                phone = resp.json().get("phone", "")
+                if phone:
+                    return phone
+            except (ValueError, KeyError):
+                pass
+    except requests.RequestException:
+        pass
 
-    WhatsApp's newer protocol uses opaque LIDs (e.g. '35047067385985') as sender
-    identifiers instead of phone numbers. The whatsmeow_lid_map table maps these
-    back to real phone numbers.
-
-    Returns the phone number if found, None otherwise.
-    """
+    # Fallback: query whatsmeow_lid_map directly (bridge is down or starting up).
     if not os.path.exists(WHATSMEOW_DB_PATH):
         return None
-    # Extract the numeric part from JID-style strings (e.g. '35047067385985@lid')
     lid = lid_or_jid.split("@")[0] if "@" in lid_or_jid else lid_or_jid
     try:
         conn = sqlite3.connect(WHATSMEOW_DB_PATH)
