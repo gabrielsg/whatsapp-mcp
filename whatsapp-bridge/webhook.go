@@ -20,6 +20,9 @@ const maxMediaBase64Bytes = 10 * 1024 * 1024 // 10 MB
 // indefinitely.
 var webhookClient = &http.Client{Timeout: 30 * time.Second}
 
+// webhookRetryDelay is the base delay between retry attempts. Overridable in tests.
+var webhookRetryDelay = time.Second
+
 // WebhookPayload represents the data sent to the webhook
 type WebhookPayload struct {
 	Sender          string `json:"sender"`
@@ -38,6 +41,7 @@ type WebhookPayload struct {
 }
 
 // sendWebhookPayload marshals and POSTs a WebhookPayload to the configured webhook URL.
+// It retries up to 3 times total with exponential backoff on network errors or non-2xx responses.
 func sendWebhookPayload(payload WebhookPayload) {
 	webhookURL := os.Getenv("WEBHOOK_URL")
 	if webhookURL == "" {
@@ -50,18 +54,24 @@ func sendWebhookPayload(payload WebhookPayload) {
 		return
 	}
 
-	resp, err := webhookClient.Post(webhookURL, "application/json", bytes.NewBuffer(jsonData))
-	if err != nil {
-		fmt.Printf("Error sending webhook: %v\n", err)
-		return
+	const maxAttempts = 3
+	for attempt := 1; attempt <= maxAttempts; attempt++ {
+		resp, err := webhookClient.Post(webhookURL, "application/json", bytes.NewBuffer(jsonData))
+		if err != nil {
+			fmt.Printf("⚠ Webhook attempt %d/%d failed: %v\n", attempt, maxAttempts, err)
+		} else {
+			_ = resp.Body.Close()
+			if resp.StatusCode >= 200 && resp.StatusCode < 300 {
+				fmt.Printf("✓ Webhook sent for message from %s\n", payload.Sender)
+				return
+			}
+			fmt.Printf("⚠ Webhook attempt %d/%d failed with status %d\n", attempt, maxAttempts, resp.StatusCode)
+		}
+		if attempt < maxAttempts {
+			time.Sleep(webhookRetryDelay * time.Duration(1<<(attempt-1)))
+		}
 	}
-	defer func() { _ = resp.Body.Close() }()
-
-	if resp.StatusCode == 200 {
-		fmt.Printf("✓ Webhook sent for message from %s\n", payload.Sender)
-	} else {
-		fmt.Printf("⚠ Webhook failed with status %d\n", resp.StatusCode)
-	}
+	fmt.Printf("⚠ Webhook delivery failed after %d attempts for message from %s\n", maxAttempts, payload.Sender)
 }
 
 // SendWebhook sends a text-only message to the webhook endpoint.
