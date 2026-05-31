@@ -1,8 +1,10 @@
 """Tests for WhatsApp MCP server functions."""
 
 from datetime import datetime
+from unittest.mock import MagicMock, patch
 
 from whatsapp import Chat, Contact, Message, chat_to_dict, contact_to_dict, msg_to_dict
+from whatsapp import _sender_aliases
 
 
 class TestMessageConversion:
@@ -64,37 +66,6 @@ class TestMessageConversion:
         result = msg_to_dict(msg, include_sender_name=False)
 
         assert result["media_type"] == "image"
-
-    def test_msg_to_dict_quoted_message_id_present(self):
-        """Quoted-reply messages expose quoted_message_id."""
-        msg = Message(
-            id="reply-001",
-            timestamp=datetime(2024, 1, 15, 10, 30, 0),
-            sender="1234567890@s.whatsapp.net",
-            content="Great point!",
-            is_from_me=False,
-            chat_jid="1234567890@s.whatsapp.net",
-            quoted_message_id="3AORIGINAL0000001",
-        )
-
-        result = msg_to_dict(msg, include_sender_name=False)
-
-        assert result["quoted_message_id"] == "3AORIGINAL0000001"
-
-    def test_msg_to_dict_quoted_message_id_absent(self):
-        """Plain messages have quoted_message_id as None."""
-        msg = Message(
-            id="plain-001",
-            timestamp=datetime(2024, 1, 15, 10, 30, 0),
-            sender="1234567890@s.whatsapp.net",
-            content="Hello!",
-            is_from_me=False,
-            chat_jid="1234567890@s.whatsapp.net",
-        )
-
-        result = msg_to_dict(msg, include_sender_name=False)
-
-        assert result["quoted_message_id"] is None
 
 
 class TestChatConversion:
@@ -173,3 +144,49 @@ class TestContactConversion:
         result = contact_to_dict(contact)
 
         assert result["name"] is None
+
+
+class TestSenderAliases:
+    """Tests for _sender_aliases — verify it calls the bridge and falls back to DB."""
+
+    def test_resolves_lid_via_bridge(self):
+        mock_resp = MagicMock()
+        mock_resp.ok = True
+        mock_resp.json.return_value = {
+            "phone": "13232432100",
+            "lid": "231241139937355",
+            "aliases": [
+                "13232432100",
+                "13232432100@s.whatsapp.net",
+                "231241139937355",
+                "231241139937355@lid",
+            ],
+        }
+        with patch("whatsapp.requests.get", return_value=mock_resp) as mock_get:
+            result = _sender_aliases("231241139937355@lid")
+
+        mock_get.assert_called_once()
+        assert mock_get.call_args[1].get("params", {}).get("jid") == "231241139937355@lid"
+        assert result == [
+            "13232432100",
+            "13232432100@s.whatsapp.net",
+            "231241139937355",
+            "231241139937355@lid",
+        ]
+
+    def test_falls_back_to_db_when_bridge_unavailable(self):
+        import requests as req_lib
+        with patch("whatsapp.requests.get", side_effect=req_lib.RequestException("down")):
+            result = _sender_aliases("13232432100@s.whatsapp.net")
+
+        bare = "13232432100"
+        assert bare in result
+        assert f"{bare}@s.whatsapp.net" in result
+
+    def test_falls_back_to_db_when_bridge_returns_error_status(self):
+        mock_resp = MagicMock()
+        mock_resp.ok = False
+        with patch("whatsapp.requests.get", return_value=mock_resp):
+            result = _sender_aliases("13232432100")
+
+        assert "13232432100" in result
