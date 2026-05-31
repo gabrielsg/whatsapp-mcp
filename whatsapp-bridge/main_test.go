@@ -232,6 +232,10 @@ func TestResolveEndpoint_PhoneToLID(t *testing.T) {
 	if result.LID != "231241139937355" {
 		t.Errorf("expected lid=231241139937355, got %q", result.LID)
 	}
+	want := []string{"13232432100", "13232432100@s.whatsapp.net", "231241139937355", "231241139937355@lid"}
+	if !reflect.DeepEqual(result.Aliases, want) {
+		t.Errorf("expected aliases=%v, got %v", want, result.Aliases)
+	}
 }
 
 func TestResolveEndpoint_NoMappingReturnsPhoneAliases(t *testing.T) {

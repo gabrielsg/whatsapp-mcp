@@ -2037,6 +2037,11 @@ func newRESTMux(client *whatsmeow.Client, messageStore *MessageStore, port int, 
 			return
 		}
 
+		if client == nil || client.Store == nil || client.Store.LIDs == nil {
+			http.Error(w, "LID store unavailable", http.StatusServiceUnavailable)
+			return
+		}
+
 		parts := strings.SplitN(jidParam, "@", 2)
 		bare := parts[0]
 		suffix := ""
