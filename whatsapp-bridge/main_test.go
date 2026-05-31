@@ -1627,6 +1627,34 @@ func TestHandleMessage_RegularMessageDoesNotMarkDeleted(t *testing.T) {
 	}
 }
 
+// TestNewMessageStore_WALJournalMode verifies that the message store opens with WAL
+// journal mode so concurrent Python reads don't see partial writes from Go.
+func TestNewMessageStore_WALJournalMode(t *testing.T) {
+	dir := t.TempDir()
+	orig, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := os.Chdir(dir); err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() { _ = os.Chdir(orig) })
+
+	ms, err := NewMessageStore()
+	if err != nil {
+		t.Fatalf("NewMessageStore: %v", err)
+	}
+	t.Cleanup(func() { _ = ms.Close() })
+
+	var mode string
+	if err := ms.db.QueryRow("PRAGMA journal_mode").Scan(&mode); err != nil {
+		t.Fatalf("PRAGMA journal_mode: %v", err)
+	}
+	if mode != "wal" {
+		t.Errorf("expected journal_mode=wal, got %q", mode)
+	}
+}
+
 // TestSendWebhookPayload_RetriesOnTransientFailure verifies that sendWebhookPayload
 // retries on non-2xx responses and eventually delivers the payload on success.
 func TestSendWebhookPayload_RetriesOnTransientFailure(t *testing.T) {
