@@ -1571,6 +1571,13 @@ type DownloadMediaResponse struct {
 	Path     string `json:"path,omitempty"`
 }
 
+// ResolveResponse is returned by GET /api/resolve.
+type ResolveResponse struct {
+	Phone   string   `json:"phone"`
+	LID     string   `json:"lid"`
+	Aliases []string `json:"aliases"`
+}
+
 // Store additional media info in the database
 func (store *MessageStore) StoreMediaInfo(id, chatJID, url string, mediaKey, fileSHA256, fileEncSHA256 []byte, fileLength uint64) error {
 	_, err := store.db.Exec(
@@ -2014,6 +2021,66 @@ func newRESTMux(client *whatsmeow.Client, messageStore *MessageStore, port int, 
 				"message": fmt.Sprintf("Typing indicator set to %v", req.IsTyping),
 			})
 		}
+	}))
+
+	// Resolve a JID or bare number to its phone + LID + all alias forms.
+	// GET /api/resolve?jid=<value>
+	// value may be: bare number, number@s.whatsapp.net, lid@lid
+	mux.HandleFunc("/api/resolve", auth(func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+		jidParam := r.URL.Query().Get("jid")
+		if jidParam == "" {
+			http.Error(w, "jid parameter required", http.StatusBadRequest)
+			return
+		}
+
+		parts := strings.SplitN(jidParam, "@", 2)
+		bare := parts[0]
+		suffix := ""
+		if len(parts) == 2 {
+			suffix = parts[1]
+		}
+
+		var phone, lid string
+		ctx := context.Background()
+
+		// Try interpreting as LID first when suffix is "lid" or ambiguous.
+		if suffix == "lid" || suffix == "" {
+			lidJID := types.JID{User: bare, Server: types.HiddenUserServer}
+			if pn, err := client.Store.LIDs.GetPNForLID(ctx, lidJID); err == nil && !pn.IsEmpty() {
+				lid = bare
+				phone = pn.ToNonAD().User
+			}
+		}
+
+		// Try interpreting as phone if still unresolved.
+		if phone == "" && (suffix == "s.whatsapp.net" || suffix == "") {
+			phoneJID := types.JID{User: bare, Server: types.DefaultUserServer}
+			if l, err := client.Store.LIDs.GetLIDForPN(ctx, phoneJID); err == nil && !l.IsEmpty() {
+				phone = bare
+				lid = l.User
+			} else if suffix == "s.whatsapp.net" {
+				// Caller asserted it is a phone number even without a LID mapping.
+				phone = bare
+			}
+		}
+
+		var aliases []string
+		if phone != "" {
+			aliases = append(aliases, phone, phone+"@s.whatsapp.net")
+		}
+		if lid != "" {
+			aliases = append(aliases, lid, lid+"@lid")
+		}
+		if len(aliases) == 0 {
+			aliases = []string{bare, bare + "@s.whatsapp.net", bare + "@lid"}
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		_ = json.NewEncoder(w).Encode(ResolveResponse{Phone: phone, LID: lid, Aliases: aliases})
 	}))
 
 	return mux

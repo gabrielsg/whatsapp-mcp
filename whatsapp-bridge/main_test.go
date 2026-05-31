@@ -9,6 +9,7 @@ import (
 	"net/http/httptest"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
 	"testing"
 	"time"
@@ -170,6 +171,93 @@ func TestSendHandlerLogsCallerBeforeDecode(t *testing.T) {
 	}
 	if !strings.Contains(output, `user_agent="unit-test-fingerprint"`) {
 		t.Fatalf("expected user agent in caller fingerprint log, got output %q", output)
+	}
+}
+
+func TestResolveEndpoint_LIDToPhone(t *testing.T) {
+	const token = "supersecrettoken1234567890abcdef"
+	lidStore := &mockLIDStore{
+		pnByLID: map[types.JID]types.JID{
+			{User: "231241139937355", Server: types.HiddenUserServer}: {User: "13232432100", Server: types.DefaultUserServer},
+		},
+	}
+	handler := newRESTMux(newTestClient(lidStore), newTestMessageStore(t), 8080, token, nil)
+	req := httptest.NewRequest(http.MethodGet, "http://127.0.0.1:8080/api/resolve?jid=231241139937355%40lid", nil)
+	req.Header.Set("Authorization", "Bearer "+token)
+	resp := httptest.NewRecorder()
+	handler.ServeHTTP(resp, req)
+
+	if resp.Code != http.StatusOK {
+		t.Fatalf("expected 200, got %d: %s", resp.Code, resp.Body.String())
+	}
+	var result ResolveResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		t.Fatalf("decode: %v", err)
+	}
+	if result.Phone != "13232432100" {
+		t.Errorf("expected phone=13232432100, got %q", result.Phone)
+	}
+	if result.LID != "231241139937355" {
+		t.Errorf("expected lid=231241139937355, got %q", result.LID)
+	}
+	want := []string{"13232432100", "13232432100@s.whatsapp.net", "231241139937355", "231241139937355@lid"}
+	if !reflect.DeepEqual(result.Aliases, want) {
+		t.Errorf("expected aliases=%v, got %v", want, result.Aliases)
+	}
+}
+
+func TestResolveEndpoint_PhoneToLID(t *testing.T) {
+	const token = "supersecrettoken1234567890abcdef"
+	lidStore := &mockLIDStore{
+		lidByPN: map[types.JID]types.JID{
+			{User: "13232432100", Server: types.DefaultUserServer}: {User: "231241139937355", Server: types.HiddenUserServer},
+		},
+	}
+	handler := newRESTMux(newTestClient(lidStore), newTestMessageStore(t), 8080, token, nil)
+	req := httptest.NewRequest(http.MethodGet, "http://127.0.0.1:8080/api/resolve?jid=13232432100%40s.whatsapp.net", nil)
+	req.Header.Set("Authorization", "Bearer "+token)
+	resp := httptest.NewRecorder()
+	handler.ServeHTTP(resp, req)
+
+	if resp.Code != http.StatusOK {
+		t.Fatalf("expected 200, got %d: %s", resp.Code, resp.Body.String())
+	}
+	var result ResolveResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		t.Fatalf("decode: %v", err)
+	}
+	if result.Phone != "13232432100" {
+		t.Errorf("expected phone=13232432100, got %q", result.Phone)
+	}
+	if result.LID != "231241139937355" {
+		t.Errorf("expected lid=231241139937355, got %q", result.LID)
+	}
+}
+
+func TestResolveEndpoint_NoMappingReturnsPhoneAliases(t *testing.T) {
+	const token = "supersecrettoken1234567890abcdef"
+	handler := newRESTMux(newTestClient(&mockLIDStore{}), newTestMessageStore(t), 8080, token, nil)
+	req := httptest.NewRequest(http.MethodGet, "http://127.0.0.1:8080/api/resolve?jid=99999999%40s.whatsapp.net", nil)
+	req.Header.Set("Authorization", "Bearer "+token)
+	resp := httptest.NewRecorder()
+	handler.ServeHTTP(resp, req)
+
+	if resp.Code != http.StatusOK {
+		t.Fatalf("expected 200, got %d", resp.Code)
+	}
+	var result ResolveResponse
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		t.Fatalf("decode: %v", err)
+	}
+	if result.Phone != "99999999" {
+		t.Errorf("expected phone=99999999, got %q", result.Phone)
+	}
+	if result.LID != "" {
+		t.Errorf("expected empty lid, got %q", result.LID)
+	}
+	want := []string{"99999999", "99999999@s.whatsapp.net"}
+	if !reflect.DeepEqual(result.Aliases, want) {
+		t.Errorf("expected aliases=%v, got %v", want, result.Aliases)
 	}
 }
 
