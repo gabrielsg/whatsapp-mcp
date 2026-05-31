@@ -156,7 +156,12 @@ def _sender_aliases(value: str) -> list[str]:
             timeout=5,
         )
         if resp.ok:
-            return resp.json()["aliases"]
+            try:
+                aliases = resp.json().get("aliases")
+                if aliases:
+                    return aliases
+            except (ValueError, KeyError):
+                pass
     except requests.RequestException:
         pass
 

@@ -190,3 +190,20 @@ class TestSenderAliases:
             result = _sender_aliases("13232432100")
 
         assert "13232432100" in result
+
+    def test_falls_back_when_bridge_returns_malformed_json(self):
+        mock_resp = MagicMock()
+        mock_resp.ok = True
+        mock_resp.json.side_effect = ValueError("not json")
+        with patch("whatsapp.requests.get", return_value=mock_resp):
+            result = _sender_aliases("13232432100")
+        assert "13232432100" in result
+
+    def test_falls_back_when_bridge_returns_empty_aliases(self):
+        mock_resp = MagicMock()
+        mock_resp.ok = True
+        mock_resp.json.return_value = {"phone": "", "lid": "", "aliases": []}
+        with patch("whatsapp.requests.get", return_value=mock_resp):
+            result = _sender_aliases("13232432100")
+        assert "13232432100" in result
+        assert "13232432100@s.whatsapp.net" in result
