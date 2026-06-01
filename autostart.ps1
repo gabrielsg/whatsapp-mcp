@@ -5,7 +5,7 @@
 $bridgeBin = "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/whatsapp-bridge"
 $workDir   = "/mnt/c/Users/gabri"
 $storeFile = "/mnt/c/Users/gabri/store/whatsapp.db"
-$logFile   = "/tmp/bridge.log"
+$logFile   = "$env:TEMP\bridge.log"
 
 # Wait until the Windows filesystem is mounted and the store is accessible.
 # /mnt/c can be missing for 10-30s after login on slow boots.
@@ -30,7 +30,7 @@ if ($ready.Trim() -ne "yes") {
 # Keeps the bridge alive through transient WhatsApp disconnects or crashes.
 while ($true) {
     Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] starting bridge"
-    & "C:\Windows\System32\wsl.exe" bash -c "cd $workDir && $bridgeBin >> $logFile 2>&1"
+    & "C:\Windows\System32\wsl.exe" bash -c "cd $workDir && $bridgeBin 2>&1" >> $logFile
     $exitCode = $LASTEXITCODE
     Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] bridge exited (code $exitCode), restarting in 5s"
     Start-Sleep -Seconds 5
