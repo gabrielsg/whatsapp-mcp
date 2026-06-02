@@ -30,14 +30,21 @@ def _read_bridge_token() -> str | None:
     env = os.getenv("WHATSAPP_BRIDGE_TOKEN", "").strip()
     if env:
         return env
-    try:
-        with open(_BRIDGE_TOKEN_PATH, encoding="utf-8") as fh:
-            value = fh.read().strip()
-            return value or None
-    except FileNotFoundError:
-        return None
-    except OSError:
-        return None
+    # Check the hardcoded project-relative path first, then the directory that
+    # WHATSMEOW_DB_PATH points to (handles store relocated via env var).
+    candidates = [
+        _BRIDGE_TOKEN_PATH,
+        os.path.join(os.path.dirname(os.path.abspath(WHATSMEOW_DB_PATH)), ".bridge-token"),
+    ]
+    for path in candidates:
+        try:
+            with open(path, encoding="utf-8") as fh:
+                value = fh.read().strip()
+                if value:
+                    return value
+        except (FileNotFoundError, OSError):
+            continue
+    return None
 
 
 def _bridge_headers() -> dict[str, str]:
