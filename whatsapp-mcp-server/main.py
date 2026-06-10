@@ -8,6 +8,9 @@ from whatsapp import (
     download_media as whatsapp_download_media,
 )
 from whatsapp import (
+    get_bridge_status as whatsapp_get_bridge_status,
+)
+from whatsapp import (
     get_chat as whatsapp_get_chat,
 )
 from whatsapp import (
@@ -46,6 +49,17 @@ from whatsapp import (
 
 # Initialize FastMCP server
 mcp = FastMCP("whatsapp")
+
+
+@mcp.tool()
+def get_bridge_status() -> dict[str, Any]:
+    """Check whether the WhatsApp bridge is running and connected to WhatsApp.
+
+    Use this first when other WhatsApp tools fail or return errors. The result
+    includes the disconnect reason and a hint for fixing it when known
+    (e.g. bridge process not running, client outdated, device logged out).
+    """
+    return whatsapp_get_bridge_status()
 
 
 @mcp.tool()
@@ -288,25 +302,13 @@ def get_message_context(message_id: str, before: int = 5, after: int = 5) -> dic
 
 
 @mcp.tool()
-def send_message(
-    recipient: str,
-    message: str,
-    quoted_message_id: str = "",
-    quoted_sender_jid: str = "",
-    quoted_content: str = "",
-) -> dict[str, Any]:
+def send_message(recipient: str, message: str) -> dict[str, Any]:
     """Send a WhatsApp message to a person or group. For group chats use the JID.
 
     Args:
         recipient: The recipient - either a phone number with country code but no + or other symbols,
                  or a JID (e.g., "123456789@s.whatsapp.net" or a group JID like "123456789@g.us")
         message: The message text to send
-        quoted_message_id: ID of the message to reply to (optional). When set, the sent
-                           message will appear as a quoted reply in WhatsApp.
-        quoted_sender_jid: Full JID of the author of the quoted message. Required for
-                           group replies so WhatsApp renders the correct attribution.
-        quoted_content: Text content of the quoted message, used for the reply preview.
-                        Only plain text is supported; media previews are not included.
 
     Returns:
         A dictionary containing success status and a status message
@@ -316,9 +318,7 @@ def send_message(
         return {"success": False, "message": "Recipient must be provided"}
 
     # Call the whatsapp_send_message function with the unified recipient parameter
-    success, status_message = whatsapp_send_message(
-        recipient, message, quoted_message_id, quoted_sender_jid, quoted_content
-    )
+    success, status_message = whatsapp_send_message(recipient, message)
     return {"success": success, "message": status_message}
 
 

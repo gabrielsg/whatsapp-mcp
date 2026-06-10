@@ -21,6 +21,11 @@ WHATSMEOW_DB_PATH = os.getenv(
 )
 WHATSAPP_API_BASE_URL = os.getenv("WHATSAPP_API_URL", "http://localhost:8080/api")
 
+# Bridge calls must never hang forever — a stuck bridge would otherwise freeze
+# the MCP tool call in the AI client. Media uploads/downloads can legitimately
+# take a while, so the default is generous.
+BRIDGE_REQUEST_TIMEOUT = float(os.getenv("WHATSAPP_BRIDGE_TIMEOUT", "120"))
+
 _BRIDGE_TOKEN_PATH = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "..", "whatsapp-bridge", "store", ".bridge-token"
 )
@@ -52,6 +57,53 @@ def _bridge_headers() -> dict[str, str]:
     if not token:
         return {}
     return {"Authorization": f"Bearer {token}"}
+
+
+def get_bridge_status() -> dict[str, Any]:
+    """Report bridge process and WhatsApp connection health.
+
+    Combines reachability of the bridge REST API with the bridge's own
+    /api/health payload (which includes the disconnect reason when known).
+    """
+    try:
+        resp = requests.get(f"{WHATSAPP_API_BASE_URL}/health", headers=_bridge_headers(), timeout=5)
+    except requests.RequestException as e:
+        return {
+            "bridge_running": False,
+            "connected": False,
+            "error": f"Bridge unreachable at {WHATSAPP_API_BASE_URL}: {e}",
+            "hint": "The Go bridge process is not running or not listening. "
+            "Check the 'WhatsAppBridge' scheduled task and the bridge log in %TEMP%\\bridge.log.",
+        }
+
+    if resp.status_code == 401:
+        return {
+            "bridge_running": True,
+            "connected": False,
+            "error": "Bridge rejected the auth token (401)",
+            "hint": "The .bridge-token file may be stale — restart the bridge or check WHATSAPP_BRIDGE_TOKEN.",
+        }
+
+    try:
+        health = resp.json()
+    except ValueError:
+        return {
+            "bridge_running": True,
+            "connected": False,
+            "error": f"Bridge returned malformed health response: HTTP {resp.status_code}",
+        }
+
+    status: dict[str, Any] = {"bridge_running": True, "connected": bool(health.get("connected"))}
+    for key in ("status", "reason", "client_outdated", "logged_out", "timestamp"):
+        if key in health:
+            status[key] = health[key]
+    if status.get("client_outdated"):
+        status["hint"] = (
+            "WhatsApp rejects this client version — update the whatsmeow dependency and rebuild the bridge."
+        )
+    elif status.get("logged_out"):
+        status["hint"] = "Device was logged out — delete whatsapp.db and re-scan the QR code."
+    return status
 
 
 @dataclass
@@ -1015,7 +1067,7 @@ def send_message(recipient: str, message: str) -> tuple[bool, str]:
             "message": message,
         }
 
-        response = requests.post(url, json=payload, headers=_bridge_headers())
+        response = requests.post(url, json=payload, headers=_bridge_headers(), timeout=BRIDGE_REQUEST_TIMEOUT)
 
         # Check if the request was successful
         if response.status_code == 200:
@@ -1047,7 +1099,7 @@ def send_file(recipient: str, media_path: str) -> tuple[bool, str]:
         url = f"{WHATSAPP_API_BASE_URL}/send"
         payload = {"recipient": recipient, "media_path": media_path}
 
-        response = requests.post(url, json=payload, headers=_bridge_headers())
+        response = requests.post(url, json=payload, headers=_bridge_headers(), timeout=BRIDGE_REQUEST_TIMEOUT)
 
         # Check if the request was successful
         if response.status_code == 200:
@@ -1085,7 +1137,7 @@ def send_audio_message(recipient: str, media_path: str) -> tuple[bool, str]:
         url = f"{WHATSAPP_API_BASE_URL}/send"
         payload = {"recipient": recipient, "media_path": media_path}
 
-        response = requests.post(url, json=payload, headers=_bridge_headers())
+        response = requests.post(url, json=payload, headers=_bridge_headers(), timeout=BRIDGE_REQUEST_TIMEOUT)
 
         # Check if the request was successful
         if response.status_code == 200:
@@ -1116,7 +1168,7 @@ def download_media(message_id: str, chat_jid: str) -> str | None:
         url = f"{WHATSAPP_API_BASE_URL}/download"
         payload = {"message_id": message_id, "chat_jid": chat_jid}
 
-        response = requests.post(url, json=payload, headers=_bridge_headers())
+        response = requests.post(url, json=payload, headers=_bridge_headers(), timeout=BRIDGE_REQUEST_TIMEOUT)
 
         if response.status_code == 200:
             result = response.json()
