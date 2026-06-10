@@ -17,6 +17,7 @@ import (
 	"reflect"
 	"strconv"
 	"strings"
+	"sync"
 	"syscall"
 	"time"
 
@@ -39,6 +40,31 @@ import (
 // Whether to forward messages sent by self via webhook.
 // Defaults to true. Override with env FORWARD_SELF=false.
 var forwardSelfMessages = getEnvBool("FORWARD_SELF", true)
+
+// connState records the most recent connection problem so /api/health can
+// report why the bridge is offline, not just that it is. "Client outdated"
+// (WhatsApp rejecting an old whatsmeow build with 405) and "logged out" both
+// look like a plain disconnect otherwise, but need very different fixes.
+var connState struct {
+	sync.Mutex
+	lastError      string
+	clientOutdated bool
+	loggedOut      bool
+}
+
+func setConnError(msg string) {
+	connState.Lock()
+	defer connState.Unlock()
+	connState.lastError = msg
+}
+
+func clearConnError() {
+	connState.Lock()
+	defer connState.Unlock()
+	connState.lastError = ""
+	connState.clientOutdated = false
+	connState.loggedOut = false
+}
 
 // CLI flag: request a full history sync at pair time.
 // Only meaningful on a fresh pair (whatsapp.db deleted). See the usage block
@@ -1808,6 +1834,17 @@ func newRESTMux(client *whatsmeow.Client, messageStore *MessageStore, port int, 
 		}
 		if !client.IsConnected() {
 			status["status"] = "disconnected"
+			connState.Lock()
+			if connState.lastError != "" {
+				status["reason"] = connState.lastError
+			}
+			if connState.clientOutdated {
+				status["client_outdated"] = true
+			}
+			if connState.loggedOut {
+				status["logged_out"] = true
+			}
+			connState.Unlock()
 			w.WriteHeader(http.StatusServiceUnavailable)
 		}
 		_ = json.NewEncoder(w).Encode(status)
@@ -2271,9 +2308,14 @@ func main() {
 
 		case *events.Connected:
 			logger.Infof("✓ Successfully connected to WhatsApp servers")
+			clearConnError()
 
 		case *events.LoggedOut:
 			logger.Warnf("⚠️  Device logged out, please scan QR code to log in again")
+			connState.Lock()
+			connState.lastError = "device logged out — delete whatsapp.db and re-scan the QR code"
+			connState.loggedOut = true
+			connState.Unlock()
 
 		case *events.Disconnected:
 			logger.Warnf("⚠️  Disconnected from WhatsApp servers, will attempt reconnection...")
@@ -2286,6 +2328,7 @@ func main() {
 
 		case *events.ConnectFailure:
 			logger.Errorf("❌ Connection failure: %v", v.Reason)
+			setConnError(fmt.Sprintf("connect failure: %v", v.Reason))
 			// Signal reconnection needed
 			select {
 			case reconnectChan <- true:
@@ -2294,6 +2337,7 @@ func main() {
 
 		case *events.StreamError:
 			logger.Errorf("❌ Stream error: %v", v.Code)
+			setConnError(fmt.Sprintf("stream error: %v", v.Code))
 			// Signal reconnection needed
 			select {
 			case reconnectChan <- true:
@@ -2316,6 +2360,10 @@ func main() {
 
 		case *events.ClientOutdated:
 			logger.Errorf("❌ Client outdated - please update whatsmeow library")
+			connState.Lock()
+			connState.lastError = "client outdated (405) — update the whatsmeow dependency and rebuild the bridge"
+			connState.clientOutdated = true
+			connState.Unlock()
 		}
 	})
 
