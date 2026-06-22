@@ -1,5 +1,8 @@
+import base64
+import mimetypes
 import signal
 import sys
+from pathlib import Path
 from typing import Any
 
 from mcp.server.fastmcp import FastMCP
@@ -46,6 +49,18 @@ from whatsapp import (
 from whatsapp import (
     send_message as whatsapp_send_message,
 )
+
+from audio import transcribe_audio
+from mcp.types import BlobResourceContents, EmbeddedResource, ImageContent, TextContent
+
+MAX_FILE_BYTES = 20 * 1024 * 1024  # 20 MB
+
+_AUDIO_EXTENSIONS = {".ogg", ".mp3", ".wav", ".m4a", ".opus", ".oga"}
+_TEXT_MIME_TYPES = {"application/json", "application/xml"}
+_TEXT_EXTENSIONS = {
+    ".txt", ".csv", ".md", ".json", ".xml", ".html", ".htm",
+    ".py", ".js", ".ts", ".go", ".yaml", ".yml", ".toml", ".ini", ".cfg",
+}
 
 # Initialize FastMCP server
 mcp = FastMCP("whatsapp")
@@ -373,6 +388,82 @@ def download_media(message_id: str, chat_jid: str) -> dict[str, Any]:
         return {"success": True, "message": "Media downloaded successfully", "file_path": file_path}
     else:
         return {"success": False, "message": "Failed to download media"}
+
+
+@mcp.tool()
+def read_file(file_path: str) -> list:
+    """Read a downloaded WhatsApp media file and return its contents for Claude to process.
+
+    - Images (jpg, png, gif, webp): Claude can see them via vision.
+    - PDFs: Claude can read the full document including formatting and tables.
+    - Audio/voice notes (ogg, mp3, wav, m4a): returns a transcript of what was said.
+    - Text files (txt, csv, json, md): returns the text content.
+    - Other files (video, etc.): returns file metadata only.
+
+    Call after download_media to view or read the file contents.
+
+    Args:
+        file_path: Absolute path to the file (as returned by download_media).
+    """
+    path = Path(file_path)
+
+    if not path.exists():
+        return [TextContent(type="text", text=f"File not found: {file_path}")]
+    if not path.is_file():
+        return [TextContent(type="text", text=f"Not a file: {file_path}")]
+
+    size = path.stat().st_size
+    mime_type, _ = mimetypes.guess_type(str(path))
+    mime_type = mime_type or "application/octet-stream"
+    suffix = path.suffix.lower()
+
+    # Images — return as base64 ImageContent so Claude can see them via vision
+    if mime_type.startswith("image/"):
+        if size > MAX_FILE_BYTES:
+            return [TextContent(type="text", text=f"File too large to read ({size // (1024 * 1024)} MB). Max 20 MB.")]
+        data = path.read_bytes()
+        return [ImageContent(type="image", mimeType=mime_type, data=base64.b64encode(data).decode())]
+
+    # PDFs — return as embedded resource; Claude Desktop reads them natively
+    if mime_type == "application/pdf":
+        if size > MAX_FILE_BYTES:
+            return [TextContent(type="text", text=f"File too large to read ({size // (1024 * 1024)} MB). Max 20 MB.")]
+        data = path.read_bytes()
+        return [
+            EmbeddedResource(
+                type="resource",
+                resource=BlobResourceContents(
+                    uri=path.as_uri(),
+                    mimeType="application/pdf",
+                    blob=base64.b64encode(data).decode(),
+                ),
+            )
+        ]
+
+    # Audio / voice notes — transcribe via faster-whisper
+    if mime_type.startswith("audio/") or suffix in _AUDIO_EXTENSIONS:
+        try:
+            transcript = transcribe_audio(file_path)
+            return [TextContent(type="text", text=f"[Transcript]\n{transcript}")]
+        except ImportError as e:
+            return [TextContent(type="text", text=str(e))]
+        except RuntimeError as e:
+            return [TextContent(type="text", text=f"Transcription failed: {e}")]
+
+    # Text files — return raw content
+    if mime_type.startswith("text/") or mime_type in _TEXT_MIME_TYPES or suffix in _TEXT_EXTENSIONS:
+        try:
+            return [TextContent(type="text", text=path.read_text(encoding="utf-8", errors="replace"))]
+        except Exception as e:
+            return [TextContent(type="text", text=f"Could not read file: {e}")]
+
+    # Binary / unknown — return metadata so Claude knows the file exists
+    return [
+        TextContent(
+            type="text",
+            text=f"Binary file: {path.name}\nType: {mime_type}\nSize: {size:,} bytes\nPath: {file_path}",
+        )
+    ]
 
 
 def shutdown_handler(signum, frame):
