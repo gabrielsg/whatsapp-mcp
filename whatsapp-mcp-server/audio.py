@@ -95,6 +95,35 @@ def convert_to_opus_ogg_temp(input_file, bitrate="32k", sample_rate=24000):
         raise e
 
 
+def transcribe_audio(file_path: str, model_name: str | None = None) -> str:
+    """Transcribe an audio file to text using faster-whisper.
+
+    Args:
+        file_path: Path to the audio file (ogg, mp3, wav, m4a, opus).
+        model_name: Whisper model to use. Falls back to WHISPER_MODEL env var,
+                    then "base". Accepted values: tiny, base, small, medium, large.
+
+    Returns:
+        Transcribed text with leading/trailing whitespace stripped from each segment.
+
+    Raises:
+        ImportError: If faster-whisper is not installed.
+        RuntimeError: If transcription fails (e.g. corrupt file, ffmpeg missing).
+    """
+    try:
+        from faster_whisper import WhisperModel
+    except ImportError:
+        raise ImportError("faster-whisper is not installed. Run: uv add faster-whisper")
+
+    resolved_model = model_name or os.environ.get("WHISPER_MODEL", "base")
+    try:
+        model = WhisperModel(resolved_model, device="cpu", compute_type="int8")
+        segments, _ = model.transcribe(file_path)
+        return " ".join(segment.text.strip() for segment in segments)
+    except Exception as e:
+        raise RuntimeError(str(e)) from e
+
+
 if __name__ == "__main__":
     # Example usage
     import sys

@@ -16,6 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
+    "faster-whisper>=1.0.0",
     "httpx>=0.28.1",
     "mcp[cli]>=1.27.1",
     "requests>=2.33.1",
