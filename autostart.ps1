@@ -7,6 +7,11 @@ $workDir   = "/mnt/c/Users/gabri"
 $storeFile = "/mnt/c/Users/gabri/store/whatsapp.db"
 $logFile   = "$env:TEMP\bridge.log"
 
+# Wake WSL immediately so it is warm before Claude Desktop tries to start MCP servers.
+# WSL cold start takes 15-30s; doing this first wins the race against Claude Desktop's
+# 60s MCP initialize timeout.
+& "C:\Windows\System32\wsl.exe" bash -c "echo wsl-ready" | Out-Null
+
 # Wait until the Windows filesystem is mounted and the store is accessible.
 # /mnt/c can be missing for 10-30s after login on slow boots.
 $maxWait = 60  # seconds
@@ -28,11 +33,6 @@ if ($ready.Trim() -ne "yes") {
 # change can take 60-120s — doing it here prevents Claude Desktop's MCP timeout.
 Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] syncing MCP server venv"
 & "C:\Windows\System32\wsl.exe" bash -c "UV_LINK_MODE=copy /home/gabriel/.local/bin/uv --directory /mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server sync 2>&1" >> $logFile
-
-# Start MCP server as a persistent SSE daemon (port 8000).
-# Claude Desktop connects via HTTP — no stdio spawn, no 60s timeout risk.
-Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] starting MCP server SSE daemon"
-& "C:\Windows\System32\wsl.exe" bash -c "pkill -f 'python main.py sse' 2>/dev/null; sleep 1; nohup bash /mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/start-sse.sh >> /tmp/mcp-server.log 2>&1 & disown"
 
 # Kill any stale instance from a previous session
 & "C:\Windows\System32\wsl.exe" bash -c "pkill -f whatsapp-bridge 2>/dev/null; sleep 1"
