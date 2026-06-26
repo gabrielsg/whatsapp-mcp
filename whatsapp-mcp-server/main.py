@@ -476,5 +476,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, shutdown_handler)
     signal.signal(signal.SIGTERM, shutdown_handler)
 
-    # Initialize and run the server
-    mcp.run(transport="stdio")
+    # Initialize and run the server.
+    # Pass "sse" as the first argument to run as a persistent HTTP/SSE server (port 8000).
+    transport = sys.argv[1] if len(sys.argv) > 1 else "stdio"
+    mcp.run(transport=transport)

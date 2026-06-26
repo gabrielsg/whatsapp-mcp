@@ -29,6 +29,11 @@ if ($ready.Trim() -ne "yes") {
 Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] syncing MCP server venv"
 & "C:\Windows\System32\wsl.exe" bash -c "UV_LINK_MODE=copy /home/gabriel/.local/bin/uv --directory /mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server sync 2>&1" >> $logFile
 
+# Start MCP server as a persistent SSE daemon (port 8000).
+# Claude Desktop connects via HTTP — no stdio spawn, no 60s timeout risk.
+Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] starting MCP server SSE daemon"
+& "C:\Windows\System32\wsl.exe" bash -c "pkill -f 'python main.py sse' 2>/dev/null; sleep 1; nohup bash /mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/start-sse.sh >> /tmp/mcp-server.log 2>&1 & disown"
+
 # Kill any stale instance from a previous session
 & "C:\Windows\System32\wsl.exe" bash -c "pkill -f whatsapp-bridge 2>/dev/null; sleep 1"
 
