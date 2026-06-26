@@ -2860,6 +2860,19 @@ func handleHistorySync(client *whatsmeow.Client, messageStore *MessageStore, his
 					if mediaType != "" {
 						logger.Infof("Stored message: [%s] %s -> %s: [%s: %s] %s",
 							msgTimestamp.Format("2006-01-02 15:04:05"), sender, chatJID, mediaType, filename, content)
+						// Async-download media so it is cached before the CDN URL expires.
+						// Mirrors the live-message handler; 403s on old messages are expected and logged.
+						if url != "" && len(mediaKey) > 0 {
+							msgIDCopy, chatJIDCopy := msgID, chatJID
+							go func() {
+								ok, _, _, dlPath, dlErr := downloadMedia(client, messageStore, msgIDCopy, chatJIDCopy)
+								if ok && dlErr == nil {
+									logger.Infof("✅ History sync: cached %s: %s", msgIDCopy, dlPath)
+								} else {
+									logger.Warnf("❌ History sync: media download failed for %s: %v", msgIDCopy, dlErr)
+								}
+							}()
+						}
 					} else {
 						logger.Infof("Stored message: [%s] %s -> %s: %s",
 							msgTimestamp.Format("2006-01-02 15:04:05"), sender, chatJID, content)
