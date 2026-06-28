@@ -28,12 +28,6 @@ if ($ready.Trim() -ne "yes") {
     exit 1
 }
 
-# Pre-sync MCP server venv so Claude Desktop can start it instantly at login.
-# uv sync with an already-up-to-date venv takes <1s; first run after a dependency
-# change can take 60-120s — doing it here prevents Claude Desktop's MCP timeout.
-Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] syncing MCP server venv"
-& "C:\Windows\System32\wsl.exe" bash -c "UV_LINK_MODE=copy /home/gabriel/.local/bin/uv --directory /mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server sync 2>&1" >> $logFile
-
 # Kill any stale instance from a previous session
 & "C:\Windows\System32\wsl.exe" bash -c "pkill -f whatsapp-bridge 2>/dev/null; sleep 1"
 
