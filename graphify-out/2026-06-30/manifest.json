@@ -1,0 +1,277 @@
+{
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.release-please-manifest.json": {
+    "mtime": 1780238635.4961402,
+    "ast_hash": "33c161f6e566c17a9fedbffcd3f54c20",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/autostart.ps1": {
+    "mtime": 1782637011.4154754,
+    "ast_hash": "37b4d5731be08a0929c4d4a6ea298316",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/release-please-config.json": {
+    "mtime": 1780238635.5952437,
+    "ast_hash": "eb146d4ffd15ae319a39af3e3e42dd8f",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/server.json": {
+    "mtime": 1780238635.61088,
+    "ast_hash": "ea2e79b4499cae6911027915c75981ce",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.claude/settings.json": {
+    "mtime": 1780232484.6006954,
+    "ast_hash": "5d6ecd96cf065b16e8bb9fbf5d7d8f0d",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/scripts/check_versions.py": {
+    "mtime": 1780238635.401006,
+    "ast_hash": "7bd2aac40894e4bcfa37dc58d87ff1b3",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/auth.go": {
+    "mtime": 1780238635.6457696,
+    "ast_hash": "099cc0b26e2a7b49cb9ce472f6a1c8d2",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/auth_test.go": {
+    "mtime": 1780238635.6457696,
+    "ast_hash": "58daff2018b7856d8ea57c8c5e3d7d44",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/main.go": {
+    "mtime": 1782466394.619471,
+    "ast_hash": "809fa3ec62b6cb8302dafa179ffb7734",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/main_test.go": {
+    "mtime": 1780239811.8312547,
+    "ast_hash": "e3d332eb6d5d60f68101dddad211d1f4",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/media_path.go": {
+    "mtime": 1780238635.6925297,
+    "ast_hash": "d01db055614438ef71cbbff96e63556b",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/media_path_test.go": {
+    "mtime": 1780238635.696529,
+    "ast_hash": "b3611f1e2ed2a8642f68db4724662187",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/webhook.go": {
+    "mtime": 1782102640.9955273,
+    "ast_hash": "6448561d266fd1358f642a2d9c5d3727",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/audio.py": {
+    "mtime": 1782111599.1873033,
+    "ast_hash": "ae3880970914dec5f34c2004bc694a04",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/main.py": {
+    "mtime": 1782457577.7765355,
+    "ast_hash": "679f17aaaccdf9502ee664ea0e17fe25",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/whatsapp.py": {
+    "mtime": 1781100948.941857,
+    "ast_hash": "f36557ca80f27b01105af54d6f27075f",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/tests/test_audio.py": {
+    "mtime": 1782111395.0281813,
+    "ast_hash": "8a4c6a40d643653b11d78dc62f370b86",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/tests/test_bridge_auth.py": {
+    "mtime": 1781101414.8052695,
+    "ast_hash": "ec7ca1f7fb102f899db2c2cd64194c1d",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/tests/test_bridge_status.py": {
+    "mtime": 1781100856.13745,
+    "ast_hash": "02a8b277dd02dfbc9135c70286ddbe62",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/tests/test_get_contact.py": {
+    "mtime": 1780238635.7868624,
+    "ast_hash": "9bdc4b9511eafbbe341c80002a419a4f",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/tests/test_list_chats.py": {
+    "mtime": 1780238635.8003757,
+    "ast_hash": "5801a1ccbb5f628a6d519491e6eacd8b",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/tests/test_read_file.py": {
+    "mtime": 1782111801.4254968,
+    "ast_hash": "4a2ff63128c2dec53114152b886a4ca9",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/tests/test_whatsapp.py": {
+    "mtime": 1780240355.0756032,
+    "ast_hash": "240d486c46342b957208851f79f30c41",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/tests/__init__.py": {
+    "mtime": 1780238635.7695258,
+    "ast_hash": "178eb97b29e08860ba90bc9b19619bd8",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/AGENTS.md": {
+    "mtime": 1780238635.505139,
+    "ast_hash": "c75208303c888332326fc40fe3b1f2aa",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/CHANGELOG.md": {
+    "mtime": 1780238635.523814,
+    "ast_hash": "acb34abdb20e52c16ba9f17b5e5910a6",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/CLAUDE.md": {
+    "mtime": 1780238635.5343063,
+    "ast_hash": "e6097e60feb03225fabb833457af7220",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/CONTRIBUTING.md": {
+    "mtime": 1780238635.551036,
+    "ast_hash": "d479ddb1c826947647dadd4b3fce50b0",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/README.md": {
+    "mtime": 1780238777.1611843,
+    "ast_hash": "4c8acedc192fbb8eed5a4ecb759ebc5f",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/ROADMAP.md": {
+    "mtime": 1780238635.5721636,
+    "ast_hash": "27d27eb52450cb437eb2c0795c10117c",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/SECURITY.md": {
+    "mtime": 1780238635.5792255,
+    "ast_hash": "1fca5cc546764545d0f9ac7e45c908ca",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-setup-guide.md": {
+    "mtime": 1779757822.667479,
+    "ast_hash": "f02e419efff42e107a9de8d96abaeb73",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/dependabot.yml": {
+    "mtime": 1780238635.3785193,
+    "ast_hash": "95a40473447d1af90be47dec0ac1af7b",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/PULL_REQUEST_TEMPLATE.md": {
+    "mtime": 1780238635.3618205,
+    "ast_hash": "175ab0351d1ce1ba6a75bcdc7534d2f8",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/ISSUE_TEMPLATE/bug_report.yml": {
+    "mtime": 1780238635.3280158,
+    "ast_hash": "52ce56d20a2866bc6e319bd171fbbe89",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/ISSUE_TEMPLATE/config.yml": {
+    "mtime": 1780238635.341013,
+    "ast_hash": "0b6beb757866f5b53faa644cf3e50f87",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/ISSUE_TEMPLATE/feature_request.yml": {
+    "mtime": 1780238635.355544,
+    "ast_hash": "3c2fc99b0982dc51c2f21adf0d6ce732",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/workflows/ci.yml": {
+    "mtime": 1780238635.4133098,
+    "ast_hash": "693a94286ba89f764141b58f7cddf10a",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/workflows/dependabot-auto-merge.yml": {
+    "mtime": 1780238635.43529,
+    "ast_hash": "36ffbee2b2e5141bb7581934356c2071",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/workflows/release-please.yml": {
+    "mtime": 1780238635.4495177,
+    "ast_hash": "8d0e6ba1688d5282098ce5cd15521994",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/workflows/release.yml": {
+    "mtime": 1780238635.4610271,
+    "ast_hash": "abba9d8c930b6f331432772cf2dc06c9",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.github/workflows/security.yml": {
+    "mtime": 1780238635.4630482,
+    "ast_hash": "114f5a170ac73ee01f89946ed19416df",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.superpowers/sdd/progress.md": {
+    "mtime": 1782112016.1006925,
+    "ast_hash": "8dc8fba00a391f6853b0ec3efdd80e08",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.superpowers/sdd/task-1-brief.md": {
+    "mtime": 1782111354.879353,
+    "ast_hash": "d09ab53a90fe52056ae6589d11305b8f",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.superpowers/sdd/task-1-report.md": {
+    "mtime": 1782111644.4956396,
+    "ast_hash": "3237faa69bc21d508bb38fe48a75cc4a",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.superpowers/sdd/task-2-brief.md": {
+    "mtime": 1782111750.032631,
+    "ast_hash": "fe7f86ecbb91ad1539ddf019062a2564",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.superpowers/sdd/task-2-report.md": {
+    "mtime": 1782111891.128059,
+    "ast_hash": "58ba12543c744118a4f57e7c3d053646",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/docs/RELEASING.md": {
+    "mtime": 1780238635.5952437,
+    "ast_hash": "f8cc6d7c40da2ca8b371607fe81d969f",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/docs/superpowers/plans/2026-05-31-lid-resolution-consolidation.md": {
+    "mtime": 1780239359.877336,
+    "ast_hash": "8ad362ce3305c77339873b2c9f31ecbb",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/docs/superpowers/plans/2026-06-22-read-file-tool.md": {
+    "mtime": 1782109439.645743,
+    "ast_hash": "57fd95b87b8573559efb7bd4d854e0bd",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/docs/superpowers/specs/2026-06-22-read-file-tool-design.md": {
+    "mtime": 1782108918.2338376,
+    "ast_hash": "15facb82a79274a561f2f49175dfeb54",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/.golangci.yml": {
+    "mtime": 1780238635.6367452,
+    "ast_hash": "0c2ec0cac5d657e81223b0bcbcaa2f82",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/example-use.png": {
+    "mtime": 1779767927.0089495,
+    "ast_hash": "85d360848e4cf7733c9e915377f3bfe8",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/.impeccable/hook.cache.json": {
+    "mtime": 1782637103.0580585,
+    "ast_hash": "afff01f34c72a33048cbd5579165d047",
+    "semantic_hash": ""
+  },
+  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/start-sse.sh": {
+    "mtime": 1782457590.5982113,
+    "ast_hash": "a5d33ab1fcc782b7f552f53ac64084bf",
+    "semantic_hash": ""
+  }
+}
