@@ -116,6 +116,16 @@ When adding a new env var: document it here, in `README.md`, and in `.env.exampl
 5. **`messages.db` is the source of truth for the MCP server.** Don't make the MCP server dependent on the bridge being up for *read* operations.
 6. **Outgoing calls are not visible to linked devices.** Don't promise features that depend on them.
 
+## WSL deployment note (Gabriel's setup)
+
+The Python venv **must live on the WSL-native filesystem**, not on `/mnt/c`. Packages on `/mnt/c` import via the 9P protocol and take 15 s+ warm (60–90 s cold-boot), which exceeds Claude Desktop's 60 s MCP `initialize` timeout.
+
+- Venv lives at: `~/.whatsapp-mcp-venv`
+- Claude Desktop config uses: `exec /home/gabriel/.whatsapp-mcp-venv/bin/python main.py`
+- To add/update a package: `~/.whatsapp-mcp-venv/bin/pip install <package>` — **not** `uv sync` (that rebuilds `.venv/` on `/mnt/c`)
+
+The `.venv/` in `whatsapp-mcp-server/` still exists for local dev (`uv run`, `uv run pytest`) but is not used by Claude Desktop.
+
 ## Where to make changes
 
 | You want to… | Touch this file |
