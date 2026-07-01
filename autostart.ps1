@@ -12,6 +12,15 @@ $logFile   = "$env:TEMP\bridge.log"
 # 60s MCP initialize timeout.
 & "C:\Windows\System32\wsl.exe" bash -c "echo wsl-ready" | Out-Null
 
+# Pre-warm Python venv page cache in background.
+# WSL ext4 cold boot takes 40-60s to import Python packages (VHDX reads via Windows I/O).
+# Starting this warmup early seeds the OS page cache so MCP server imports complete in
+# ~5s (from warm cache) rather than 40-60s, clearing the 60s MCP initialize timeout.
+Start-Job -ScriptBlock {
+    & "C:\Windows\System32\wsl.exe" -e bash -c `
+        "/home/gabriel/.whatsapp-mcp-venv/bin/python -c 'import mcp.server.fastmcp, httpx, anyio, mcp.types' 2>/dev/null"
+} | Out-Null
+
 # Wait until the Windows filesystem is mounted and the store is accessible.
 # /mnt/c can be missing for 10-30s after login on slow boots.
 $maxWait = 60  # seconds
