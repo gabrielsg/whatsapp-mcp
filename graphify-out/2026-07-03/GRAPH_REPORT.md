@@ -1,16 +1,16 @@
-# Graph Report - whatsapp-bridge  (2026-06-30)
+# Graph Report - whatsapp-bridge  (2026-07-03)
 
 ## Corpus Check
-- 45 files · ~158,369 words
+- 48 files · ~159,137 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 876 nodes · 1938 edges · 76 communities (40 shown, 36 thin omitted)
-- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 134 edges (avg confidence: 0.77)
+- 910 nodes · 1977 edges · 78 communities (41 shown, 37 thin omitted)
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 137 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b5bb6ea7`
+- Built from commit: `89ee582d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -88,6 +88,8 @@
 - [[_COMMUNITY_Community 72|Community 72]]
 - [[_COMMUNITY_Community 74|Community 74]]
 - [[_COMMUNITY_Community 75|Community 75]]
+- [[_COMMUNITY_Community 76|Community 76]]
+- [[_COMMUNITY_Community 77|Community 77]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `handleMessage()` - 48 edges
@@ -119,7 +121,7 @@
 ## Hyperedges (group relationships)
 - **Release automation: release-please workflow + RELEASING.md playbook + manual fallback workflow produce versioned artifacts** — workflows_release_please_workflow, docs_releasing_releasing_md, workflows_release_manual_fallback, agents_release_please, changelog_changelog_md [EXTRACTED 1.00]
 
-## Communities (76 total, 36 thin omitted)
+## Communities (78 total, 37 thin omitted)
 
 ### Community 0 - "WhatsApp MCP Test Suite"
 Cohesion: 0.11
@@ -142,8 +144,8 @@ Cohesion: 0.10
 Nodes (27): int, str, int, str, main(), normalize_tag(), read_pyproject_version(), read_server_json_versions() (+19 more)
 
 ### Community 5 - "HTTP Auth & Routing"
-Cohesion: 0.09
-Nodes (54): Any, bool, int, str, download_media(), get_bridge_status(), get_chat(), get_contact() (+46 more)
+Cohesion: 0.06
+Nodes (73): Any, bool, int, str, Path, download_media(), get_bridge_status(), get_chat() (+65 more)
 
 ### Community 6 - "Bridge Token & Startup"
 Cohesion: 0.26
@@ -269,16 +271,20 @@ Nodes (10): Behavior, Commit, Concerns, Files Changed, Function Signature, Imple
 Cohesion: 0.29
 Nodes (6): File Map, Global Constraints, Post-Implementation, `read_file` MCP Tool Implementation Plan, Task 1: `transcribe_audio` helper + `faster-whisper` dependency, Task 2: `read_file` MCP tool
 
+### Community 76 - "Community 76"
+Cohesion: 0.36
+Nodes (6): downloadFilename(), Time, safeExt(), T, TestDownloadFilename(), TestSafeExt()
+
 ## Knowledge Gaps
-- **215 isolated node(s):** `release-type`, `include-v-in-tag`, `include-component-in-tag`, `changelog-path`, `extra-files` (+210 more)
+- **218 isolated node(s):** `release-type`, `include-v-in-tag`, `include-component-in-tag`, `changelog-path`, `extra-files` (+213 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **36 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `downloadMedia()` connect `Go SQLite Data Types` to `WhatsApp MCP Test Suite`, `HTTP Auth & Routing`, `Media Path Safety`, `List Chats Tests`, `LID Migration`?**
-  _High betweenness centrality (0.125) - this node is a cross-community bridge._
+- **Why does `downloadMedia()` connect `Go SQLite Data Types` to `WhatsApp MCP Test Suite`, `HTTP Auth & Routing`, `Media Path Safety`, `List Chats Tests`, `Community 76`, `LID Migration`?**
+  _High betweenness centrality (0.142) - this node is a cross-community bridge._
 - **Why does `handleMessage()` connect `Go SQLite Data Types` to `Audio Conversion & REST Auth`, `Docs & CI Architecture`?**
   _High betweenness centrality (0.058) - this node is a cross-community bridge._
 - **Why does `newRESTMux()` connect `Go SQLite Data Types` to `Media Path Safety`, `Docs & CI Architecture`, `Chat Sync & Metadata`?**
@@ -286,7 +292,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 20 inferred relationships involving `handleMessage()` (e.g. with `SendWebhook()` and `SendWebhookWithMedia()`) actually correct?**
   _`handleMessage()` has 20 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `release-type`, `include-v-in-tag`, `include-component-in-tag` to the rest of the system?**
-  _319 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _339 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `WhatsApp MCP Test Suite` be split into smaller, more focused modules?**
   _Cohesion score 0.11092436974789915 - nodes in this community are weakly interconnected._
 - **Should `Go SQLite Data Types` be split into smaller, more focused modules?**

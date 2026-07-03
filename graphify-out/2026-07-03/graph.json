@@ -1096,7 +1096,7 @@
       "label": "extractDirectPathFromURL()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1795",
+      "source_location": "L1784",
       "id": "whatsapp_bridge_main_extractdirectpathfromurl",
       "community": 1,
       "norm_label": "extractdirectpathfromurl()"
@@ -1105,7 +1105,7 @@
       "label": "newRESTMux()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1815",
+      "source_location": "L1804",
       "id": "whatsapp_bridge_main_newrestmux",
       "community": 1,
       "norm_label": "newrestmux()"
@@ -1114,7 +1114,7 @@
       "label": "ServeMux",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1815",
+      "source_location": "L1804",
       "id": "servemux",
       "community": 1,
       "norm_label": "servemux"
@@ -1123,7 +1123,7 @@
       "label": "startRESTServer()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2126",
+      "source_location": "L2115",
       "id": "whatsapp_bridge_main_startrestserver",
       "community": 1,
       "norm_label": "startrestserver()"
@@ -1132,7 +1132,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2151",
+      "source_location": "L2140",
       "id": "whatsapp_bridge_main_main",
       "community": 1,
       "norm_label": "main()"
@@ -1141,7 +1141,7 @@
       "label": "GetChatName()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2554",
+      "source_location": "L2543",
       "id": "whatsapp_bridge_main_getchatname",
       "community": 1,
       "norm_label": "getchatname()"
@@ -1150,7 +1150,7 @@
       "label": "callChatJID()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2648",
+      "source_location": "L2637",
       "id": "whatsapp_bridge_main_callchatjid",
       "community": 1,
       "norm_label": "callchatjid()"
@@ -1159,7 +1159,7 @@
       "label": "BasicCallMeta",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2648",
+      "source_location": "L2637",
       "id": "basiccallmeta",
       "community": 1,
       "norm_label": "basiccallmeta"
@@ -1168,7 +1168,7 @@
       "label": "handleCallOffer()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2662",
+      "source_location": "L2651",
       "id": "whatsapp_bridge_main_handlecalloffer",
       "community": 1,
       "norm_label": "handlecalloffer()"
@@ -1177,7 +1177,7 @@
       "label": "handleHistorySync()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2692",
+      "source_location": "L2681",
       "id": "whatsapp_bridge_main_handlehistorysync",
       "community": 1,
       "norm_label": "handlehistorysync()"
@@ -1186,7 +1186,7 @@
       "label": "HistorySync",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2692",
+      "source_location": "L2681",
       "id": "historysync",
       "community": 1,
       "norm_label": "historysync"
@@ -1195,7 +1195,7 @@
       "label": "analyzeOggOpus()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2884",
+      "source_location": "L2873",
       "id": "whatsapp_bridge_main_analyzeoggopus",
       "community": 1,
       "norm_label": "analyzeoggopus()"
@@ -1204,7 +1204,7 @@
       "label": "min()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2991",
+      "source_location": "L2980",
       "id": "whatsapp_bridge_main_min",
       "community": 1,
       "norm_label": "min()"
@@ -1213,7 +1213,7 @@
       "label": "placeholderWaveform()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L3000",
+      "source_location": "L2989",
       "id": "whatsapp_bridge_main_placeholderwaveform",
       "community": 1,
       "norm_label": "placeholderwaveform()"
@@ -1867,6 +1867,78 @@
       "norm_label": "testhandlemessage_panicrecovery()"
     },
     {
+      "label": "media_filename.go",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/media_filename.go",
+      "source_location": "L1",
+      "id": "whatsapp_bridge_media_filename_go",
+      "community": 76,
+      "norm_label": "media_filename.go"
+    },
+    {
+      "label": "safeExt()",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/media_filename.go",
+      "source_location": "L26",
+      "id": "whatsapp_bridge_media_filename_safeext",
+      "community": 76,
+      "norm_label": "safeext()"
+    },
+    {
+      "label": "downloadFilename()",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/media_filename.go",
+      "source_location": "L37",
+      "id": "whatsapp_bridge_media_filename_downloadfilename",
+      "community": 76,
+      "norm_label": "downloadfilename()"
+    },
+    {
+      "label": "Time",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/media_filename.go",
+      "source_location": "L37",
+      "id": "whatsapp_bridge_media_filename_go_time",
+      "community": 76,
+      "norm_label": "time"
+    },
+    {
+      "label": "media_filename_test.go",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L1",
+      "id": "whatsapp_bridge_media_filename_test_go",
+      "community": 76,
+      "norm_label": "media_filename_test.go"
+    },
+    {
+      "label": "TestSafeExt()",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L8",
+      "id": "whatsapp_bridge_media_filename_test_testsafeext",
+      "community": 76,
+      "norm_label": "testsafeext()"
+    },
+    {
+      "label": "T",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L8",
+      "id": "whatsapp_bridge_media_filename_test_go_t",
+      "community": 76,
+      "norm_label": "t"
+    },
+    {
+      "label": "TestDownloadFilename()",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L36",
+      "id": "whatsapp_bridge_media_filename_test_testdownloadfilename",
+      "community": 76,
+      "norm_label": "testdownloadfilename()"
+    },
+    {
       "label": "media_path.go",
       "file_type": "code",
       "source_file": "whatsapp-bridge/media_path.go",
@@ -2056,6 +2128,33 @@
       "norm_label": "sendwebhookwithmedia()"
     },
     {
+      "label": "hook.cache.json",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "id": "whatsapp_bridge_impeccable_hook_cache_json",
+      "community": 77,
+      "norm_label": "hook.cache.json"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "id": "whatsapp_bridge_impeccable_hook_cache_json_impeccable_hook_cache_version",
+      "community": 77,
+      "norm_label": "version"
+    },
+    {
+      "label": "sessions",
+      "file_type": "code",
+      "source_file": "whatsapp-bridge/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "id": "whatsapp_bridge_impeccable_hook_cache_json_impeccable_hook_cache_sessions",
+      "community": 77,
+      "norm_label": "sessions"
+    },
+    {
       "label": "audio.py",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/audio.py",
@@ -2137,28 +2236,46 @@
       "norm_label": "main.py"
     },
     {
-      "label": "get_bridge_status()",
+      "label": "_sniff_mime()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L70",
-      "id": "whatsapp_mcp_server_main_get_bridge_status",
+      "source_location": "L78",
+      "id": "whatsapp_mcp_server_main_sniff_mime",
       "community": 5,
-      "norm_label": "get_bridge_status()"
+      "norm_label": "_sniff_mime()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L78",
+      "id": "path",
+      "community": 5,
+      "norm_label": "path"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L70",
+      "source_location": "L78",
       "id": "whatsapp_mcp_server_main_py_str",
       "community": 5,
       "norm_label": "str"
     },
     {
+      "label": "get_bridge_status()",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L99",
+      "id": "whatsapp_mcp_server_main_get_bridge_status",
+      "community": 5,
+      "norm_label": "get_bridge_status()"
+    },
+    {
       "label": "Any",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L70",
+      "source_location": "L99",
       "id": "whatsapp_mcp_server_main_py_any",
       "community": 5,
       "norm_label": "any"
@@ -2167,7 +2284,7 @@
       "label": "search_contacts()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L81",
+      "source_location": "L110",
       "id": "whatsapp_mcp_server_main_search_contacts",
       "community": 5,
       "norm_label": "search_contacts()"
@@ -2176,7 +2293,7 @@
       "label": "get_contact()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L92",
+      "source_location": "L121",
       "id": "whatsapp_mcp_server_main_get_contact",
       "community": 5,
       "norm_label": "get_contact()"
@@ -2185,7 +2302,7 @@
       "label": "list_messages()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L183",
+      "source_location": "L212",
       "id": "whatsapp_mcp_server_main_list_messages",
       "community": 5,
       "norm_label": "list_messages()"
@@ -2194,7 +2311,7 @@
       "label": "int",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L183",
+      "source_location": "L212",
       "id": "whatsapp_mcp_server_main_py_int",
       "community": 5,
       "norm_label": "int"
@@ -2203,7 +2320,7 @@
       "label": "bool",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L183",
+      "source_location": "L212",
       "id": "whatsapp_mcp_server_main_py_bool",
       "community": 5,
       "norm_label": "bool"
@@ -2212,7 +2329,7 @@
       "label": "list_chats()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L232",
+      "source_location": "L261",
       "id": "whatsapp_mcp_server_main_list_chats",
       "community": 5,
       "norm_label": "list_chats()"
@@ -2221,7 +2338,7 @@
       "label": "get_chat()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L257",
+      "source_location": "L286",
       "id": "whatsapp_mcp_server_main_get_chat",
       "community": 5,
       "norm_label": "get_chat()"
@@ -2230,7 +2347,7 @@
       "label": "get_direct_chat_by_contact()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L269",
+      "source_location": "L298",
       "id": "whatsapp_mcp_server_main_get_direct_chat_by_contact",
       "community": 5,
       "norm_label": "get_direct_chat_by_contact()"
@@ -2239,7 +2356,7 @@
       "label": "get_contact_chats()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L280",
+      "source_location": "L309",
       "id": "whatsapp_mcp_server_main_get_contact_chats",
       "community": 5,
       "norm_label": "get_contact_chats()"
@@ -2248,7 +2365,7 @@
       "label": "get_last_interaction()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L293",
+      "source_location": "L322",
       "id": "whatsapp_mcp_server_main_get_last_interaction",
       "community": 5,
       "norm_label": "get_last_interaction()"
@@ -2257,7 +2374,7 @@
       "label": "get_message_context()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L307",
+      "source_location": "L336",
       "id": "whatsapp_mcp_server_main_get_message_context",
       "community": 5,
       "norm_label": "get_message_context()"
@@ -2266,7 +2383,7 @@
       "label": "send_message()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L320",
+      "source_location": "L349",
       "id": "whatsapp_mcp_server_main_send_message",
       "community": 5,
       "norm_label": "send_message()"
@@ -2275,7 +2392,7 @@
       "label": "send_file()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L341",
+      "source_location": "L370",
       "id": "whatsapp_mcp_server_main_send_file",
       "community": 5,
       "norm_label": "send_file()"
@@ -2284,7 +2401,7 @@
       "label": "send_audio_message()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L359",
+      "source_location": "L388",
       "id": "whatsapp_mcp_server_main_send_audio_message",
       "community": 5,
       "norm_label": "send_audio_message()"
@@ -2293,7 +2410,7 @@
       "label": "download_media()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L375",
+      "source_location": "L404",
       "id": "whatsapp_mcp_server_main_download_media",
       "community": 5,
       "norm_label": "download_media()"
@@ -2302,7 +2419,7 @@
       "label": "read_file()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L394",
+      "source_location": "L423",
       "id": "whatsapp_mcp_server_main_read_file",
       "community": 5,
       "norm_label": "read_file()"
@@ -2311,17 +2428,26 @@
       "label": "shutdown_handler()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L469",
+      "source_location": "L500",
       "id": "whatsapp_mcp_server_main_shutdown_handler",
       "community": 5,
       "norm_label": "shutdown_handler()"
     },
     {
+      "label": "Detect a file's MIME type from its leading magic bytes.",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L79",
+      "id": "whatsapp_mcp_server_main_rationale_79",
+      "community": 5,
+      "norm_label": "detect a file's mime type from its leading magic bytes."
+    },
+    {
       "label": "Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L71",
-      "id": "whatsapp_mcp_server_main_rationale_71",
+      "source_location": "L100",
+      "id": "whatsapp_mcp_server_main_rationale_100",
       "community": 5,
       "norm_label": "check whether the whatsapp bridge is running and connected to whatsapp.      use"
     },
@@ -2329,8 +2455,8 @@
       "label": "Search WhatsApp contacts by name or phone number.      Args:         query: Sear",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L82",
-      "id": "whatsapp_mcp_server_main_rationale_82",
+      "source_location": "L111",
+      "id": "whatsapp_mcp_server_main_rationale_111",
       "community": 5,
       "norm_label": "search whatsapp contacts by name or phone number.      args:         query: sear"
     },
@@ -2338,8 +2464,8 @@
       "label": "Look up a WhatsApp contact by phone number, LID, or full JID.      Automatically",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L97",
-      "id": "whatsapp_mcp_server_main_rationale_97",
+      "source_location": "L126",
+      "id": "whatsapp_mcp_server_main_rationale_126",
       "community": 5,
       "norm_label": "look up a whatsapp contact by phone number, lid, or full jid.      automatically"
     },
@@ -2347,8 +2473,8 @@
       "label": "Get WhatsApp messages matching specified criteria with optional context.      Ea",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L196",
-      "id": "whatsapp_mcp_server_main_rationale_196",
+      "source_location": "L225",
+      "id": "whatsapp_mcp_server_main_rationale_225",
       "community": 5,
       "norm_label": "get whatsapp messages matching specified criteria with optional context.      ea"
     },
@@ -2356,8 +2482,8 @@
       "label": "Get WhatsApp chats matching specified criteria.      Args:         query: Search",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L239",
-      "id": "whatsapp_mcp_server_main_rationale_239",
+      "source_location": "L268",
+      "id": "whatsapp_mcp_server_main_rationale_268",
       "community": 5,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search"
     },
@@ -2365,8 +2491,8 @@
       "label": "Get WhatsApp chat metadata by JID.      Args:         chat_jid: The JID of the c",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L258",
-      "id": "whatsapp_mcp_server_main_rationale_258",
+      "source_location": "L287",
+      "id": "whatsapp_mcp_server_main_rationale_287",
       "community": 5,
       "norm_label": "get whatsapp chat metadata by jid.      args:         chat_jid: the jid of the c"
     },
@@ -2374,8 +2500,8 @@
       "label": "Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L270",
-      "id": "whatsapp_mcp_server_main_rationale_270",
+      "source_location": "L299",
+      "id": "whatsapp_mcp_server_main_rationale_299",
       "community": 5,
       "norm_label": "get whatsapp chat metadata by sender phone number.      args:         sender_pho"
     },
@@ -2383,8 +2509,8 @@
       "label": "Get all WhatsApp chats involving the contact.      Args:         jid: The contac",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L281",
-      "id": "whatsapp_mcp_server_main_rationale_281",
+      "source_location": "L310",
+      "id": "whatsapp_mcp_server_main_rationale_310",
       "community": 5,
       "norm_label": "get all whatsapp chats involving the contact.      args:         jid: the contac"
     },
@@ -2392,8 +2518,8 @@
       "label": "Get most recent WhatsApp message involving the contact.      Args:         jid:",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L294",
-      "id": "whatsapp_mcp_server_main_rationale_294",
+      "source_location": "L323",
+      "id": "whatsapp_mcp_server_main_rationale_323",
       "community": 5,
       "norm_label": "get most recent whatsapp message involving the contact.      args:         jid:"
     },
@@ -2401,8 +2527,8 @@
       "label": "Get context around a specific WhatsApp message.      Args:         message_id: T",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L308",
-      "id": "whatsapp_mcp_server_main_rationale_308",
+      "source_location": "L337",
+      "id": "whatsapp_mcp_server_main_rationale_337",
       "community": 5,
       "norm_label": "get context around a specific whatsapp message.      args:         message_id: t"
     },
@@ -2410,8 +2536,8 @@
       "label": "Send a WhatsApp message to a person or group. For group chats use the JID.",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L321",
-      "id": "whatsapp_mcp_server_main_rationale_321",
+      "source_location": "L350",
+      "id": "whatsapp_mcp_server_main_rationale_350",
       "community": 5,
       "norm_label": "send a whatsapp message to a person or group. for group chats use the jid."
     },
@@ -2419,8 +2545,8 @@
       "label": "Send a file such as a picture, raw audio, video or document via WhatsApp to the",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L342",
-      "id": "whatsapp_mcp_server_main_rationale_342",
+      "source_location": "L371",
+      "id": "whatsapp_mcp_server_main_rationale_371",
       "community": 5,
       "norm_label": "send a file such as a picture, raw audio, video or document via whatsapp to the"
     },
@@ -2428,8 +2554,8 @@
       "label": "Send any audio file as a WhatsApp audio message to the specified recipient. For",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L360",
-      "id": "whatsapp_mcp_server_main_rationale_360",
+      "source_location": "L389",
+      "id": "whatsapp_mcp_server_main_rationale_389",
       "community": 5,
       "norm_label": "send any audio file as a whatsapp audio message to the specified recipient. for"
     },
@@ -2437,8 +2563,8 @@
       "label": "Download media from a WhatsApp message and get the local file path.      Args:",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L376",
-      "id": "whatsapp_mcp_server_main_rationale_376",
+      "source_location": "L405",
+      "id": "whatsapp_mcp_server_main_rationale_405",
       "community": 5,
       "norm_label": "download media from a whatsapp message and get the local file path.      args:"
     },
@@ -2446,8 +2572,8 @@
       "label": "Read a downloaded WhatsApp media file and return its contents for Claude to proc",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L395",
-      "id": "whatsapp_mcp_server_main_rationale_395",
+      "source_location": "L424",
+      "id": "whatsapp_mcp_server_main_rationale_424",
       "community": 5,
       "norm_label": "read a downloaded whatsapp media file and return its contents for claude to proc"
     },
@@ -2455,8 +2581,8 @@
       "label": "Handle shutdown signals gracefully to prevent zombie processes.",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L470",
-      "id": "whatsapp_mcp_server_main_rationale_470",
+      "source_location": "L501",
+      "id": "whatsapp_mcp_server_main_rationale_501",
       "community": 5,
       "norm_label": "handle shutdown signals gracefully to prevent zombie processes."
     },
@@ -2953,24 +3079,6 @@
       "id": "whatsapp_mcp_server_impeccable_hook_cache_json",
       "community": 75,
       "norm_label": "hook.cache.json"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
-      "source_location": "L1",
-      "id": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_version",
-      "community": 75,
-      "norm_label": "version"
-    },
-    {
-      "label": "sessions",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
-      "source_location": "L1",
-      "id": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_sessions",
-      "community": 75,
-      "norm_label": "sessions"
     },
     {
       "label": "test_audio.py",
@@ -3522,10 +3630,46 @@
       "norm_label": "test_read_file_json()"
     },
     {
-      "label": "test_read_file_video_returns_metadata()",
+      "label": "test_read_file_pdf_without_extension()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
       "source_location": "L164",
+      "id": "tests_test_read_file_test_read_file_pdf_without_extension",
+      "community": 52,
+      "norm_label": "test_read_file_pdf_without_extension()"
+    },
+    {
+      "label": "test_read_file_jpeg_without_extension()",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
+      "source_location": "L175",
+      "id": "tests_test_read_file_test_read_file_jpeg_without_extension",
+      "community": 52,
+      "norm_label": "test_read_file_jpeg_without_extension()"
+    },
+    {
+      "label": "test_read_file_ogg_without_extension()",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
+      "source_location": "L184",
+      "id": "tests_test_read_file_test_read_file_ogg_without_extension",
+      "community": 52,
+      "norm_label": "test_read_file_ogg_without_extension()"
+    },
+    {
+      "label": "test_read_file_unknown_binary_without_extension()",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
+      "source_location": "L194",
+      "id": "tests_test_read_file_test_read_file_unknown_binary_without_extension",
+      "community": 52,
+      "norm_label": "test_read_file_unknown_binary_without_extension()"
+    },
+    {
+      "label": "test_read_file_video_returns_metadata()",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
+      "source_location": "L207",
       "id": "tests_test_read_file_test_read_file_video_returns_metadata",
       "community": 52,
       "norm_label": "test_read_file_video_returns_metadata()"
@@ -5734,6 +5878,168 @@
       "id": "specs_2026_06_22_read_file_tool_design_out_of_scope",
       "community": 66,
       "norm_label": "out of scope"
+    },
+    {
+      "label": "Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L71",
+      "community": 5,
+      "norm_label": "check whether the whatsapp bridge is running and connected to whatsapp.      use",
+      "id": "whatsapp_mcp_server_main_rationale_71"
+    },
+    {
+      "label": "Search WhatsApp contacts by name or phone number.      Args:         query: Sear",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L82",
+      "community": 5,
+      "norm_label": "search whatsapp contacts by name or phone number.      args:         query: sear",
+      "id": "whatsapp_mcp_server_main_rationale_82"
+    },
+    {
+      "label": "Look up a WhatsApp contact by phone number, LID, or full JID.      Automatically",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L97",
+      "community": 5,
+      "norm_label": "look up a whatsapp contact by phone number, lid, or full jid.      automatically",
+      "id": "whatsapp_mcp_server_main_rationale_97"
+    },
+    {
+      "label": "Get WhatsApp messages matching specified criteria with optional context.      Ea",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L196",
+      "community": 5,
+      "norm_label": "get whatsapp messages matching specified criteria with optional context.      ea",
+      "id": "whatsapp_mcp_server_main_rationale_196"
+    },
+    {
+      "label": "Get WhatsApp chats matching specified criteria.      Args:         query: Search",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L239",
+      "community": 5,
+      "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search",
+      "id": "whatsapp_mcp_server_main_rationale_239"
+    },
+    {
+      "label": "Get WhatsApp chat metadata by JID.      Args:         chat_jid: The JID of the c",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L258",
+      "community": 5,
+      "norm_label": "get whatsapp chat metadata by jid.      args:         chat_jid: the jid of the c",
+      "id": "whatsapp_mcp_server_main_rationale_258"
+    },
+    {
+      "label": "Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L270",
+      "community": 5,
+      "norm_label": "get whatsapp chat metadata by sender phone number.      args:         sender_pho",
+      "id": "whatsapp_mcp_server_main_rationale_270"
+    },
+    {
+      "label": "Get all WhatsApp chats involving the contact.      Args:         jid: The contac",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L281",
+      "community": 5,
+      "norm_label": "get all whatsapp chats involving the contact.      args:         jid: the contac",
+      "id": "whatsapp_mcp_server_main_rationale_281"
+    },
+    {
+      "label": "Get most recent WhatsApp message involving the contact.      Args:         jid:",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L294",
+      "community": 5,
+      "norm_label": "get most recent whatsapp message involving the contact.      args:         jid:",
+      "id": "whatsapp_mcp_server_main_rationale_294"
+    },
+    {
+      "label": "Get context around a specific WhatsApp message.      Args:         message_id: T",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L308",
+      "community": 5,
+      "norm_label": "get context around a specific whatsapp message.      args:         message_id: t",
+      "id": "whatsapp_mcp_server_main_rationale_308"
+    },
+    {
+      "label": "Send a WhatsApp message to a person or group. For group chats use the JID.",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L321",
+      "community": 5,
+      "norm_label": "send a whatsapp message to a person or group. for group chats use the jid.",
+      "id": "whatsapp_mcp_server_main_rationale_321"
+    },
+    {
+      "label": "Send a file such as a picture, raw audio, video or document via WhatsApp to the",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L342",
+      "community": 5,
+      "norm_label": "send a file such as a picture, raw audio, video or document via whatsapp to the",
+      "id": "whatsapp_mcp_server_main_rationale_342"
+    },
+    {
+      "label": "Send any audio file as a WhatsApp audio message to the specified recipient. For",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L360",
+      "community": 5,
+      "norm_label": "send any audio file as a whatsapp audio message to the specified recipient. for",
+      "id": "whatsapp_mcp_server_main_rationale_360"
+    },
+    {
+      "label": "Download media from a WhatsApp message and get the local file path.      Args:",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L376",
+      "community": 5,
+      "norm_label": "download media from a whatsapp message and get the local file path.      args:",
+      "id": "whatsapp_mcp_server_main_rationale_376"
+    },
+    {
+      "label": "Read a downloaded WhatsApp media file and return its contents for Claude to proc",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L395",
+      "community": 5,
+      "norm_label": "read a downloaded whatsapp media file and return its contents for claude to proc",
+      "id": "whatsapp_mcp_server_main_rationale_395"
+    },
+    {
+      "label": "Handle shutdown signals gracefully to prevent zombie processes.",
+      "file_type": "rationale",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L470",
+      "community": 5,
+      "norm_label": "handle shutdown signals gracefully to prevent zombie processes.",
+      "id": "whatsapp_mcp_server_main_rationale_470"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "community": 75,
+      "norm_label": "version",
+      "id": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_version"
+    },
+    {
+      "label": "sessions",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "community": 75,
+      "norm_label": "sessions",
+      "id": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_sessions"
     },
     {
       "label": "version",
@@ -9126,9 +9432,9 @@
       "source_file": ".impeccable/hook.cache.json",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impeccable_hook_cache_json",
-      "target": "impeccable_hook_cache_json_impeccable_hook_cache_sessions",
-      "confidence_score": 1.0
+      "target": "impeccable_hook_cache_json_impeccable_hook_cache_sessions"
     },
     {
       "relation": "contains",
@@ -9136,9 +9442,9 @@
       "source_file": ".impeccable/hook.cache.json",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impeccable_hook_cache_json",
-      "target": "impeccable_hook_cache_json_impeccable_hook_cache_version",
-      "confidence_score": 1.0
+      "target": "impeccable_hook_cache_json_impeccable_hook_cache_version"
     },
     {
       "relation": "contains",
@@ -12860,6 +13166,17 @@
       "confidence_score": 1.0,
       "source": "whatsapp_bridge_main_downloadmedia",
       "target": "whatsapp_bridge_main_extractdirectpathfromurl"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "whatsapp-bridge/main.go",
+      "source_location": "L1705",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_main_downloadmedia",
+      "target": "whatsapp_bridge_media_filename_downloadfilename"
     },
     {
       "relation": "calls",
@@ -17824,6 +18141,112 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/media_filename.go",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_media_filename_go",
+      "target": "whatsapp_bridge_media_filename_downloadfilename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/media_filename.go",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_media_filename_go",
+      "target": "whatsapp_bridge_media_filename_safeext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/media_filename.go",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_media_filename_downloadfilename",
+      "target": "whatsapp_bridge_media_filename_safeext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_media_filename_test_testsafeext",
+      "target": "whatsapp_bridge_media_filename_safeext"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/media_filename.go",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "whatsapp_bridge_media_filename_downloadfilename",
+      "target": "whatsapp_bridge_media_filename_go_time",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_media_filename_test_testdownloadfilename",
+      "target": "whatsapp_bridge_media_filename_downloadfilename"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_media_filename_test_go",
+      "target": "whatsapp_bridge_media_filename_test_testdownloadfilename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_media_filename_test_go",
+      "target": "whatsapp_bridge_media_filename_test_testsafeext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "whatsapp_bridge_media_filename_test_testsafeext",
+      "target": "whatsapp_bridge_media_filename_test_go_t",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/media_filename_test.go",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "whatsapp_bridge_media_filename_test_testdownloadfilename",
+      "target": "whatsapp_bridge_media_filename_test_go_t",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "whatsapp-bridge/media_path.go",
       "source_location": "L78",
       "weight": 1.0,
@@ -18548,6 +18971,26 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_impeccable_hook_cache_json",
+      "target": "whatsapp_bridge_impeccable_hook_cache_json_impeccable_hook_cache_sessions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-bridge/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "whatsapp_bridge_impeccable_hook_cache_json",
+      "target": "whatsapp_bridge_impeccable_hook_cache_json_impeccable_hook_cache_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/audio.py",
       "source_location": "L6",
       "weight": 1.0,
@@ -18832,75 +19275,65 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L55",
+      "source_location": "L78",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py",
-      "target": "whatsapp_mcp_server_main_get_bridge_status"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "whatsapp_mcp_server_main_get_bridge_status",
-      "target": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py_any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "whatsapp_mcp_server_main_get_bridge_status",
-      "target": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py_str"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "whatsapp_mcp_server_main_get_bridge_status",
-      "target": "whatsapp_mcp_server_main_py_any"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "whatsapp_mcp_server_main_get_bridge_status",
-      "target": "whatsapp_mcp_server_main_py_str"
+      "source": "whatsapp_mcp_server_main_py",
+      "target": "whatsapp_mcp_server_main_sniff_mime",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L56",
+      "source_location": "L79",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "whatsapp_mcp_server_main_rationale_56",
-      "target": "whatsapp_mcp_server_main_get_bridge_status"
+      "source": "whatsapp_mcp_server_main_rationale_79",
+      "target": "whatsapp_mcp_server_main_sniff_mime",
+      "confidence_score": 1.0
     },
     {
-      "relation": "rationale_for",
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
-      "source_location": "L71",
+      "source_location": "L447",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "whatsapp_mcp_server_main_rationale_71",
-      "target": "whatsapp_mcp_server_main_get_bridge_status"
+      "source": "whatsapp_mcp_server_main_read_file",
+      "target": "whatsapp_mcp_server_main_sniff_mime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_sniff_mime",
+      "target": "path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_sniff_mime",
+      "target": "whatsapp_mcp_server_main_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L437",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_read_file",
+      "target": "path",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -18911,6 +19344,17 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_download_media",
+      "target": "whatsapp_mcp_server_main_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "whatsapp_mcp_server_main_get_bridge_status",
       "target": "whatsapp_mcp_server_main_py_str"
     },
     {
@@ -19057,6 +19501,79 @@
       "target": "whatsapp_mcp_server_main_py_str"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py",
+      "target": "whatsapp_mcp_server_main_get_bridge_status"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "whatsapp_mcp_server_main_get_bridge_status",
+      "target": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py_any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "whatsapp_mcp_server_main_get_bridge_status",
+      "target": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "whatsapp_mcp_server_main_get_bridge_status",
+      "target": "whatsapp_mcp_server_main_py_any"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_100",
+      "target": "whatsapp_mcp_server_main_get_bridge_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_56",
+      "target": "whatsapp_mcp_server_main_get_bridge_status"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_71",
+      "target": "whatsapp_mcp_server_main_get_bridge_status"
+    },
+    {
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
@@ -19213,6 +19730,16 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_111",
+      "target": "whatsapp_mcp_server_main_search_contacts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L67",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -19282,6 +19809,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_get_contact",
       "target": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py_str"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_126",
+      "target": "whatsapp_mcp_server_main_get_contact",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -19398,6 +19935,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_196",
       "target": "whatsapp_mcp_server_main_list_messages"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L225",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_225",
+      "target": "whatsapp_mcp_server_main_list_messages",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -19529,6 +20076,16 @@
       "target": "whatsapp_mcp_server_main_list_chats"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L268",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_268",
+      "target": "whatsapp_mcp_server_main_list_chats",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
@@ -19592,6 +20149,16 @@
       "target": "whatsapp_mcp_server_main_get_chat"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L287",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_287",
+      "target": "whatsapp_mcp_server_main_get_chat",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
@@ -19642,6 +20209,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_270",
       "target": "whatsapp_mcp_server_main_get_direct_chat_by_contact"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L299",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_299",
+      "target": "whatsapp_mcp_server_main_get_direct_chat_by_contact",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -19707,6 +20284,16 @@
       "target": "whatsapp_mcp_server_main_get_contact_chats"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L310",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_310",
+      "target": "whatsapp_mcp_server_main_get_contact_chats",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
@@ -19757,6 +20344,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_294",
       "target": "whatsapp_mcp_server_main_get_last_interaction"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L323",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_323",
+      "target": "whatsapp_mcp_server_main_get_last_interaction",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -19822,6 +20419,16 @@
       "target": "whatsapp_mcp_server_main_get_message_context"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L337",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_337",
+      "target": "whatsapp_mcp_server_main_get_message_context",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
@@ -19850,6 +20457,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_321",
       "target": "whatsapp_mcp_server_main_send_message"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L350",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_350",
+      "target": "whatsapp_mcp_server_main_send_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -19904,6 +20521,16 @@
       "target": "whatsapp_mcp_server_main_send_file"
     },
     {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L371",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_371",
+      "target": "whatsapp_mcp_server_main_send_file",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
@@ -19954,6 +20581,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_360",
       "target": "whatsapp_mcp_server_main_send_audio_message"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L389",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_389",
+      "target": "whatsapp_mcp_server_main_send_audio_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -20033,11 +20670,31 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L405",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_405",
+      "target": "whatsapp_mcp_server_main_download_media",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L395",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_395",
       "target": "whatsapp_mcp_server_main_read_file"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L424",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_424",
+      "target": "whatsapp_mcp_server_main_read_file",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20068,6 +20725,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_470",
       "target": "whatsapp_mcp_server_main_shutdown_handler"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/main.py",
+      "source_location": "L501",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_main_rationale_501",
+      "target": "whatsapp_mcp_server_main_shutdown_handler",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23293,9 +23960,9 @@
       "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_impeccable_hook_cache_json",
-      "target": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_sessions",
-      "confidence_score": 1.0
+      "target": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_sessions"
     },
     {
       "relation": "contains",
@@ -23303,9 +23970,9 @@
       "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_impeccable_hook_cache_json",
-      "target": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_version",
-      "confidence_score": 1.0
+      "target": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_version"
     },
     {
       "relation": "rationale_for",
@@ -24092,6 +24759,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_tests_test_read_file_py",
+      "target": "tests_test_read_file_test_read_file_jpeg_without_extension",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
       "source_location": "L151",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -24107,6 +24784,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_tests_test_read_file_py",
       "target": "tests_test_read_file_test_read_file_not_found"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_tests_test_read_file_py",
+      "target": "tests_test_read_file_test_read_file_ogg_without_extension",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -24132,6 +24819,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_tests_test_read_file_py",
+      "target": "tests_test_read_file_test_read_file_pdf_without_extension",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
       "source_location": "L42",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -24147,6 +24844,16 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_tests_test_read_file_py",
       "target": "tests_test_read_file_test_read_file_txt"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "whatsapp_mcp_server_tests_test_read_file_py",
+      "target": "tests_test_read_file_test_read_file_unknown_binary_without_extension",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -24972,9 +25679,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L119",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "whatsapp_bridge_agents_agents_md",
-      "target": "whatsapp_bridge_agents_wsl_deployment_note_gabriel_s_setup",
-      "confidence_score": 1.0
+      "target": "whatsapp_bridge_agents_wsl_deployment_note_gabriel_s_setup"
     },
     {
       "relation": "contains",
@@ -28734,5 +29441,5 @@
       "source_file": "CHANGELOG.md"
     }
   ],
-  "built_at_commit": "b5bb6ea7f69f1c7ac5db71b40edd600cc6e12d1d"
+  "built_at_commit": "89ee582dde7d2999dbbce7dac402e2e391af7bfb"
 }
