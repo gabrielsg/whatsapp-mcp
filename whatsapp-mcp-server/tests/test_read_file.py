@@ -7,6 +7,12 @@ import main as mcp_main
 from mcp.types import EmbeddedResource, ImageContent, TextContent
 
 
+@pytest.fixture(autouse=True)
+def _allow_tmp_reads(tmp_path, monkeypatch):
+    """read_file only serves files under allowed roots; let tests use tmp_path."""
+    monkeypatch.setenv("WHATSAPP_READ_ROOTS", str(tmp_path))
+
+
 # ---------------------------------------------------------------------------
 # Error cases
 # ---------------------------------------------------------------------------
@@ -198,6 +204,51 @@ def test_read_file_unknown_binary_without_extension(tmp_path):
     assert len(result) == 1
     assert isinstance(result[0], TextContent)
     assert "Binary file" in result[0].text
+
+
+# ---------------------------------------------------------------------------
+# Path restriction — only files under allowed roots may be read
+# ---------------------------------------------------------------------------
+
+def test_read_file_outside_roots_rejected(tmp_path_factory):
+    # A real, readable file that is NOT under any allowed root
+    outside = tmp_path_factory.mktemp("outside") / "secret.txt"
+    outside.write_text("s3cr3t", encoding="utf-8")
+    result = mcp_main.read_file(str(outside))
+    assert len(result) == 1
+    assert isinstance(result[0], TextContent)
+    assert "outside the allowed" in result[0].text
+    assert "s3cr3t" not in result[0].text
+
+
+def test_read_file_symlink_escaping_root_rejected(tmp_path, tmp_path_factory):
+    # A symlink inside an allowed root must not read a target outside it
+    target = tmp_path_factory.mktemp("outside") / "id_rsa"
+    target.write_text("PRIVATE KEY", encoding="utf-8")
+    link = tmp_path / "innocent.txt"
+    link.symlink_to(target)
+    result = mcp_main.read_file(str(link))
+    assert len(result) == 1
+    assert isinstance(result[0], TextContent)
+    assert "outside the allowed" in result[0].text
+    assert "PRIVATE KEY" not in result[0].text
+
+
+def test_read_file_store_dir_allowed_by_default(tmp_path, monkeypatch):
+    # Without WHATSAPP_READ_ROOTS, the bridge store dir (derived from
+    # MESSAGES_DB_PATH) is the allowed root
+    monkeypatch.delenv("WHATSAPP_READ_ROOTS", raising=False)
+    store = tmp_path / "store"
+    store.mkdir()
+    monkeypatch.setattr(mcp_main, "MESSAGES_DB_PATH", str(store / "messages.db"))
+    chat_dir = store / "chat"
+    chat_dir.mkdir()
+    pdf = chat_dir / "document_20260703_172709_ABC.pdf"
+    pdf.write_bytes(b"%PDF-1.4 fake pdf content here")
+    result = mcp_main.read_file(str(pdf))
+    assert len(result) == 1
+    assert isinstance(result[0], EmbeddedResource)
+    assert result[0].resource.mimeType == "application/pdf"
 
 
 # ---------------------------------------------------------------------------

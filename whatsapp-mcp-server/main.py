@@ -1,5 +1,6 @@
 import base64
 import mimetypes
+import os
 import signal
 import sys
 from pathlib import Path
@@ -7,6 +8,7 @@ from typing import Any
 
 from mcp.server.fastmcp import FastMCP
 
+from whatsapp import MESSAGES_DB_PATH
 from whatsapp import (
     download_media as whatsapp_download_media,
 )
@@ -89,6 +91,24 @@ def _sniff_mime(path: Path) -> str | None:
     if header[:4] == b"RIFF" and header[8:12] == b"WEBP":
         return "image/webp"
     return None
+
+
+def _allowed_read_roots() -> list[Path]:
+    """Directories read_file may serve files from.
+
+    Defaults to the bridge's store directory (derived from MESSAGES_DB_PATH,
+    so it follows any env-var relocation). Extra roots can be added via
+    WHATSAPP_READ_ROOTS (colon-separated absolute paths), mirroring the
+    bridge's WHATSAPP_MEDIA_ROOTS for outbound media. This keeps read_file
+    from acting as an arbitrary-file-read primitive if a hostile message
+    talks the model into passing a path like ~/.ssh/id_rsa.
+    """
+    roots = [Path(MESSAGES_DB_PATH).parent.resolve()]
+    for raw in os.environ.get("WHATSAPP_READ_ROOTS", "").split(os.pathsep):
+        raw = raw.strip()
+        if raw:
+            roots.append(Path(raw).resolve())
+    return roots
 
 
 # Initialize FastMCP server
@@ -431,6 +451,9 @@ def read_file(file_path: str) -> list:
 
     Call after download_media to view or read the file contents.
 
+    Only files inside the WhatsApp store directory (or WHATSAPP_READ_ROOTS)
+    can be read.
+
     Args:
         file_path: Absolute path to the file (as returned by download_media).
     """
@@ -440,6 +463,22 @@ def read_file(file_path: str) -> list:
         return [TextContent(type="text", text=f"File not found: {file_path}")]
     if not path.is_file():
         return [TextContent(type="text", text=f"Not a file: {file_path}")]
+
+    # Resolve symlinks BEFORE the root check, then read only via the
+    # resolved path, so a symlink inside the store can't smuggle out a
+    # file from elsewhere.
+    path = path.resolve()
+    if not any(path.is_relative_to(root) for root in _allowed_read_roots()):
+        return [
+            TextContent(
+                type="text",
+                text=(
+                    f"Access denied: {file_path} is outside the allowed read roots "
+                    "(the WhatsApp store directory). Set WHATSAPP_READ_ROOTS to "
+                    "allow additional directories."
+                ),
+            )
+        ]
 
     size = path.stat().st_size
     mime_type, _ = mimetypes.guess_type(str(path))
@@ -474,7 +513,7 @@ def read_file(file_path: str) -> list:
     # Audio / voice notes — transcribe via faster-whisper
     if mime_type.startswith("audio/") or suffix in _AUDIO_EXTENSIONS:
         try:
-            transcript = transcribe_audio(file_path)
+            transcript = transcribe_audio(str(path))
             return [TextContent(type="text", text=f"[Transcript]\n{transcript}")]
         except ImportError as e:
             return [TextContent(type="text", text=str(e))]
