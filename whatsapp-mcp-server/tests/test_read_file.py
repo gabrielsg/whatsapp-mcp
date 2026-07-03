@@ -158,6 +158,49 @@ def test_read_file_json(tmp_path):
 
 
 # ---------------------------------------------------------------------------
+# Extensionless files — type detected from magic bytes
+# ---------------------------------------------------------------------------
+
+def test_read_file_pdf_without_extension(tmp_path):
+    # Documents downloaded by older bridge versions have no extension,
+    # e.g. document_20260703_172709_AC0957499B276E221B982D08FFC76F1D
+    doc = tmp_path / "document_20260703_172709_AC0957499B276E221B982D08FFC76F1D"
+    doc.write_bytes(b"%PDF-1.4 fake pdf content here")
+    result = mcp_main.read_file(str(doc))
+    assert len(result) == 1
+    assert isinstance(result[0], EmbeddedResource)
+    assert result[0].resource.mimeType == "application/pdf"
+
+
+def test_read_file_jpeg_without_extension(tmp_path):
+    img = tmp_path / "image_20260703_172709_ABC123"
+    img.write_bytes(b"\xff\xd8\xff\xe0" + b"\x00" * 10)
+    result = mcp_main.read_file(str(img))
+    assert len(result) == 1
+    assert isinstance(result[0], ImageContent)
+    assert result[0].mimeType == "image/jpeg"
+
+
+def test_read_file_ogg_without_extension(tmp_path, monkeypatch):
+    aud = tmp_path / "audio_20260703_172709_DEF456"
+    aud.write_bytes(b"OggS" + b"\x00" * 20)
+    monkeypatch.setattr(mcp_main, "transcribe_audio", lambda path: "see you at 3pm")
+    result = mcp_main.read_file(str(aud))
+    assert len(result) == 1
+    assert isinstance(result[0], TextContent)
+    assert "[Transcript]" in result[0].text
+
+
+def test_read_file_unknown_binary_without_extension(tmp_path):
+    blob = tmp_path / "document_20260703_172709_GHI789"
+    blob.write_bytes(b"\x00\x01\x02\x03unknown format")
+    result = mcp_main.read_file(str(blob))
+    assert len(result) == 1
+    assert isinstance(result[0], TextContent)
+    assert "Binary file" in result[0].text
+
+
+# ---------------------------------------------------------------------------
 # Binary / unknown fallback
 # ---------------------------------------------------------------------------
 

@@ -62,6 +62,35 @@ _TEXT_EXTENSIONS = {
     ".py", ".js", ".ts", ".go", ".yaml", ".yml", ".toml", ".ini", ".cfg",
 }
 
+# Magic-byte signatures for files without a usable extension (older bridge
+# versions saved document attachments extensionless).
+_MAGIC_SIGNATURES = [
+    (b"%PDF-", "application/pdf"),
+    (b"\x89PNG\r\n\x1a\n", "image/png"),
+    (b"\xff\xd8\xff", "image/jpeg"),
+    (b"GIF87a", "image/gif"),
+    (b"GIF89a", "image/gif"),
+    (b"OggS", "audio/ogg"),
+    (b"ID3", "audio/mpeg"),
+]
+
+
+def _sniff_mime(path: Path) -> str | None:
+    """Detect a file's MIME type from its leading magic bytes."""
+    try:
+        with path.open("rb") as f:
+            header = f.read(16)
+    except OSError:
+        return None
+    for signature, mime in _MAGIC_SIGNATURES:
+        if header.startswith(signature):
+            return mime
+    # WebP: RIFF container with WEBP fourcc at offset 8
+    if header[:4] == b"RIFF" and header[8:12] == b"WEBP":
+        return "image/webp"
+    return None
+
+
 # Initialize FastMCP server
 mcp = FastMCP("whatsapp")
 
@@ -414,6 +443,8 @@ def read_file(file_path: str) -> list:
 
     size = path.stat().st_size
     mime_type, _ = mimetypes.guess_type(str(path))
+    if mime_type is None:
+        mime_type = _sniff_mime(path)
     mime_type = mime_type or "application/octet-stream"
     suffix = path.suffix.lower()
 
