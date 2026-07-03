@@ -1677,7 +1677,7 @@ func (d *MediaDownloader) GetMediaType() whatsmeow.MediaType {
 // Function to download media from a message
 func downloadMedia(client *whatsmeow.Client, messageStore *MessageStore, messageID, chatJID string) (bool, string, string, string, error) {
 	// Query the database for the message including timestamp
-	var mediaType, url string
+	var mediaType, storedFilename, url string
 	var mediaKey, fileSHA256, fileEncSHA256 []byte
 	var fileLength uint64
 	var timestamp time.Time
@@ -1685,9 +1685,9 @@ func downloadMedia(client *whatsmeow.Client, messageStore *MessageStore, message
 
 	// Get media info AND timestamp from the database
 	err = messageStore.db.QueryRow(
-		"SELECT media_type, url, media_key, file_sha256, file_enc_sha256, file_length, timestamp FROM messages WHERE id = ? AND chat_jid = ?",
+		"SELECT media_type, filename, url, media_key, file_sha256, file_enc_sha256, file_length, timestamp FROM messages WHERE id = ? AND chat_jid = ?",
 		messageID, chatJID,
-	).Scan(&mediaType, &url, &mediaKey, &fileSHA256, &fileEncSHA256, &fileLength, &timestamp)
+	).Scan(&mediaType, &storedFilename, &url, &mediaKey, &fileSHA256, &fileEncSHA256, &fileLength, &timestamp)
 
 	if err != nil {
 		return false, "", "", "", fmt.Errorf("failed to find message: %v", err)
@@ -1698,22 +1698,11 @@ func downloadMedia(client *whatsmeow.Client, messageStore *MessageStore, message
 		return false, "", "", "", fmt.Errorf("not a media message")
 	}
 
-	// Rebuild filename from (timestamp, messageID) — must match extractMediaInfo.
-	// The message ID disambiguates two messages that arrive in the same second.
-	var ext string
-	switch mediaType {
-	case "image":
-		ext = ".jpg"
-	case "video":
-		ext = ".mp4"
-	case "audio":
-		ext = ".ogg"
-	case "document":
-		ext = ""
-	default:
-		ext = ""
-	}
-	filename := fmt.Sprintf("%s_%s_%s%s", mediaType, timestamp.Format("20060102_150405"), messageID, ext)
+	// Rebuild filename from (timestamp, messageID); the message ID
+	// disambiguates two messages that arrive in the same second. For
+	// documents the stored original filename supplies a sanitized
+	// extension so the saved file keeps a usable type (.pdf, .docx, …).
+	filename := downloadFilename(mediaType, timestamp, messageID, storedFilename)
 
 	// First, check if we already have this file
 	chatDir := fmt.Sprintf("store/%s", strings.ReplaceAll(chatJID, ":", "_"))
