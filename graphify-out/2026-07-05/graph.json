@@ -2340,7 +2340,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L281",
       "id": "whatsapp_mcp_server_main_list_chats",
-      "community": 5,
+      "community": 86,
       "norm_label": "list_chats()"
     },
     {
@@ -2358,7 +2358,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L318",
       "id": "whatsapp_mcp_server_main_get_direct_chat_by_contact",
-      "community": 86,
+      "community": 79,
       "norm_label": "get_direct_chat_by_contact()"
     },
     {
@@ -2394,7 +2394,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L369",
       "id": "whatsapp_mcp_server_main_send_message",
-      "community": 79,
+      "community": 87,
       "norm_label": "send_message()"
     },
     {
@@ -2502,7 +2502,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L288",
       "id": "whatsapp_mcp_server_main_rationale_288",
-      "community": 5,
+      "community": 86,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search"
     },
     {
@@ -2520,7 +2520,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L319",
       "id": "whatsapp_mcp_server_main_rationale_319",
-      "community": 86,
+      "community": 79,
       "norm_label": "get whatsapp chat metadata by sender phone number.      args:         sender_pho"
     },
     {
@@ -2556,7 +2556,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L370",
       "id": "whatsapp_mcp_server_main_rationale_370",
-      "community": 79,
+      "community": 87,
       "norm_label": "send a whatsapp message to a person or group. for group chats use the jid."
     },
     {
@@ -2629,42 +2629,6 @@
       "id": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_start_sse_sh__entry",
       "community": 74,
       "norm_label": "start-sse.sh script"
-    },
-    {
-      "label": "warmhold.py",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L1",
-      "id": "whatsapp_mcp_server_warmhold_py",
-      "community": 87,
-      "norm_label": "warmhold.py"
-    },
-    {
-      "label": "log()",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L20",
-      "id": "whatsapp_mcp_server_warmhold_log",
-      "community": 87,
-      "norm_label": "log()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L20",
-      "id": "whatsapp_mcp_server_warmhold_py_str",
-      "community": 87,
-      "norm_label": "str"
-    },
-    {
-      "label": "Pre-warm and hold the WhatsApp MCP server's Python module cache.  Launched by au",
-      "file_type": "rationale",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L1",
-      "id": "whatsapp_mcp_server_warmhold_rationale_1",
-      "community": 87,
-      "norm_label": "pre-warm and hold the whatsapp mcp server's python module cache.  launched by au"
     },
     {
       "label": "whatsapp.py",
@@ -3133,24 +3097,6 @@
       "id": "whatsapp_mcp_server_impeccable_hook_cache_json",
       "community": 75,
       "norm_label": "hook.cache.json"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
-      "source_location": "L1",
-      "id": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_version",
-      "community": 75,
-      "norm_label": "version"
-    },
-    {
-      "label": "sessions",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
-      "source_location": "L1",
-      "id": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_sessions",
-      "community": 75,
-      "norm_label": "sessions"
     },
     {
       "label": "test_audio.py",
@@ -6046,7 +5992,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L268",
-      "community": 5,
+      "community": 86,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search",
       "id": "whatsapp_mcp_server_main_rationale_268"
     },
@@ -6064,7 +6010,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L299",
-      "community": 86,
+      "community": 79,
       "norm_label": "get whatsapp chat metadata by sender phone number.      args:         sender_pho",
       "id": "whatsapp_mcp_server_main_rationale_299"
     },
@@ -6100,7 +6046,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L350",
-      "community": 79,
+      "community": 87,
       "norm_label": "send a whatsapp message to a person or group. for group chats use the jid.",
       "id": "whatsapp_mcp_server_main_rationale_350"
     },
@@ -6181,7 +6127,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L239",
-      "community": 5,
+      "community": 86,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search",
       "id": "whatsapp_mcp_server_main_rationale_239"
     },
@@ -6199,7 +6145,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L270",
-      "community": 86,
+      "community": 79,
       "norm_label": "get whatsapp chat metadata by sender phone number.      args:         sender_pho",
       "id": "whatsapp_mcp_server_main_rationale_270"
     },
@@ -6235,7 +6181,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L321",
-      "community": 79,
+      "community": 87,
       "norm_label": "send a whatsapp message to a person or group. for group chats use the jid.",
       "id": "whatsapp_mcp_server_main_rationale_321"
     },
@@ -6283,6 +6229,24 @@
       "community": 79,
       "norm_label": "handle shutdown signals gracefully to prevent zombie processes.",
       "id": "whatsapp_mcp_server_main_rationale_470"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "community": 75,
+      "norm_label": "version",
+      "id": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_version"
+    },
+    {
+      "label": "sessions",
+      "file_type": "code",
+      "source_file": "whatsapp-mcp-server/.impeccable/hook.cache.json",
+      "source_location": "L1",
+      "community": 75,
+      "norm_label": "sessions",
+      "id": "whatsapp_mcp_server_impeccable_hook_cache_json_impeccable_hook_cache_sessions"
     },
     {
       "label": "version",
@@ -6541,7 +6505,7 @@
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L55",
-      "community": 86,
+      "community": 82,
       "norm_label": "str",
       "id": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py_str"
     },
@@ -6604,7 +6568,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L224",
-      "community": 5,
+      "community": 86,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search",
       "id": "whatsapp_mcp_server_main_rationale_224"
     },
@@ -6622,7 +6586,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L255",
-      "community": 86,
+      "community": 79,
       "norm_label": "get whatsapp chat metadata by sender phone number.      args:         sender_pho",
       "id": "whatsapp_mcp_server_main_rationale_255"
     },
@@ -6658,7 +6622,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L306",
-      "community": 79,
+      "community": 87,
       "norm_label": "send a whatsapp message to a person or group. for group chats use the jid.",
       "id": "whatsapp_mcp_server_main_rationale_306"
     },
@@ -19360,9 +19324,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L96",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_py",
-      "target": "whatsapp_mcp_server_main_allowed_read_roots"
+      "target": "whatsapp_mcp_server_main_allowed_read_roots",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -19550,9 +19514,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L81",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_81",
-      "target": "whatsapp_mcp_server_main_sniff_mime"
+      "target": "whatsapp_mcp_server_main_sniff_mime",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -19594,9 +19558,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L96",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_allowed_read_roots",
-      "target": "path"
+      "target": "path",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -19780,9 +19744,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L97",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_97",
-      "target": "whatsapp_mcp_server_main_allowed_read_roots"
+      "target": "whatsapp_mcp_server_main_allowed_read_roots",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -19791,9 +19755,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L471",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_read_file",
-      "target": "whatsapp_mcp_server_main_allowed_read_roots"
+      "target": "whatsapp_mcp_server_main_allowed_read_roots",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -19854,9 +19818,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L120",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_120",
-      "target": "whatsapp_mcp_server_main_get_bridge_status"
+      "target": "whatsapp_mcp_server_main_get_bridge_status",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -20047,9 +20011,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L131",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_131",
-      "target": "whatsapp_mcp_server_main_search_contacts"
+      "target": "whatsapp_mcp_server_main_search_contacts",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -20141,9 +20105,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L146",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_146",
-      "target": "whatsapp_mcp_server_main_get_contact"
+      "target": "whatsapp_mcp_server_main_get_contact",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -20277,9 +20241,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L245",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_245",
-      "target": "whatsapp_mcp_server_main_list_messages"
+      "target": "whatsapp_mcp_server_main_list_messages",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -20426,9 +20390,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L288",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_288",
-      "target": "whatsapp_mcp_server_main_list_chats"
+      "target": "whatsapp_mcp_server_main_list_chats",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20509,9 +20473,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L307",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_307",
-      "target": "whatsapp_mcp_server_main_get_chat"
+      "target": "whatsapp_mcp_server_main_get_chat",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20581,9 +20545,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L319",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_319",
-      "target": "whatsapp_mcp_server_main_get_direct_chat_by_contact"
+      "target": "whatsapp_mcp_server_main_get_direct_chat_by_contact",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20664,9 +20628,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L330",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_330",
-      "target": "whatsapp_mcp_server_main_get_contact_chats"
+      "target": "whatsapp_mcp_server_main_get_contact_chats",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20736,9 +20700,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L343",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_343",
-      "target": "whatsapp_mcp_server_main_get_last_interaction"
+      "target": "whatsapp_mcp_server_main_get_last_interaction",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20819,9 +20783,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L357",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_357",
-      "target": "whatsapp_mcp_server_main_get_message_context"
+      "target": "whatsapp_mcp_server_main_get_message_context",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20869,9 +20833,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L370",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_370",
-      "target": "whatsapp_mcp_server_main_send_message"
+      "target": "whatsapp_mcp_server_main_send_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -20941,9 +20905,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L391",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_391",
-      "target": "whatsapp_mcp_server_main_send_file"
+      "target": "whatsapp_mcp_server_main_send_file",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -21013,9 +20977,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L409",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_409",
-      "target": "whatsapp_mcp_server_main_send_audio_message"
+      "target": "whatsapp_mcp_server_main_send_audio_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -21107,9 +21071,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L425",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_425",
-      "target": "whatsapp_mcp_server_main_download_media"
+      "target": "whatsapp_mcp_server_main_download_media",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -21137,9 +21101,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L444",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_444",
-      "target": "whatsapp_mcp_server_main_read_file"
+      "target": "whatsapp_mcp_server_main_read_file",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -21187,9 +21151,9 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L540",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_main_rationale_540",
-      "target": "whatsapp_mcp_server_main_shutdown_handler"
+      "target": "whatsapp_mcp_server_main_shutdown_handler",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -21200,37 +21164,6 @@
       "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_start_sse_sh",
       "target": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_start_sse_sh__entry"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_py",
-      "target": "whatsapp_mcp_server_warmhold_log",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_rationale_1",
-      "target": "whatsapp_mcp_server_warmhold_py",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_log",
-      "target": "whatsapp_mcp_server_warmhold_py_str",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25177,9 +25110,9 @@
       "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_tests_test_read_file_py",
-      "target": "tests_test_read_file_allow_tmp_reads"
+      "target": "tests_test_read_file_allow_tmp_reads",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25297,9 +25230,9 @@
       "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
       "source_location": "L213",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_tests_test_read_file_py",
-      "target": "tests_test_read_file_test_read_file_outside_roots_rejected"
+      "target": "tests_test_read_file_test_read_file_outside_roots_rejected",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25347,9 +25280,9 @@
       "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
       "source_location": "L237",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_tests_test_read_file_py",
-      "target": "tests_test_read_file_test_read_file_store_dir_allowed_by_default"
+      "target": "tests_test_read_file_test_read_file_store_dir_allowed_by_default",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25357,9 +25290,9 @@
       "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
       "source_location": "L224",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_tests_test_read_file_py",
-      "target": "tests_test_read_file_test_read_file_symlink_escaping_root_rejected"
+      "target": "tests_test_read_file_test_read_file_symlink_escaping_root_rejected",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25397,9 +25330,9 @@
       "source_file": "whatsapp-mcp-server/tests/test_read_file.py",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tests_test_read_file_rationale_12",
-      "target": "tests_test_read_file_allow_tmp_reads"
+      "target": "tests_test_read_file_allow_tmp_reads",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -29977,5 +29910,5 @@
       "source_file": "CHANGELOG.md"
     }
   ],
-  "built_at_commit": "9266721d35d19f33c83d9e6fdbf0772ee26a7870"
+  "built_at_commit": "6c2bde64d51ac1ab0b4643cf20abe4bc530ae44e"
 }

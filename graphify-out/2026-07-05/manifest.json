@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "/mnt/c/Users/gabri/Projects/whatsapp-bridge/autostart.ps1": {
-    "mtime": 1783215998.8368268,
-    "ast_hash": "f6093f46de76195a62d25da0645f84ce",
+    "mtime": 1782867506.9188623,
+    "ast_hash": "a85e5c8af764f566a0f02fc532bdf262",
     "semantic_hash": ""
   },
   "/mnt/c/Users/gabri/Projects/whatsapp-bridge/release-please-config.json": {
@@ -275,8 +275,8 @@
     "semantic_hash": ""
   },
   "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/.impeccable/hook.cache.json": {
-    "mtime": 1783216121.6005752,
-    "ast_hash": "afff01f34c72a33048cbd5579165d047",
+    "mtime": 1783083169.5992887,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
     "semantic_hash": ""
   },
   "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/media_filename.go": {
@@ -292,11 +292,6 @@
   "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-bridge/.impeccable/hook.cache.json": {
     "mtime": 1783072927.6348436,
     "ast_hash": "afff01f34c72a33048cbd5579165d047",
-    "semantic_hash": ""
-  },
-  "/mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/warmhold.py": {
-    "mtime": 1783216121.352026,
-    "ast_hash": "074bd34c4567dfa27b5829875ef8fcb7",
     "semantic_hash": ""
   }
 }

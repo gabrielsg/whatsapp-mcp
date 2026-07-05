@@ -1,16 +1,16 @@
-# Graph Report - whatsapp-bridge  (2026-07-05)
+# Graph Report - whatsapp-bridge  (2026-07-03)
 
 ## Corpus Check
-- 49 files · ~159,775 words
+- 48 files · ~159,493 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 937 nodes · 2006 edges · 89 communities (53 shown, 36 thin omitted)
+- 933 nodes · 2003 edges · 89 communities (53 shown, 36 thin omitted)
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 137 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9266721d`
+- Built from commit: `6c2bde64`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -155,8 +155,8 @@ Cohesion: 0.10
 Nodes (27): int, str, int, str, main(), normalize_tag(), read_pyproject_version(), read_server_json_versions() (+19 more)
 
 ### Community 5 - "HTTP Auth & Routing"
-Cohesion: 0.13
-Nodes (17): bool, get_chat(), list_chats(), list_messages(), bool, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp chats matching specified criteria.      Args:         query: Search (+9 more)
+Cohesion: 0.18
+Nodes (12): bool, get_chat(), list_messages(), bool, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp chat metadata by JID.      Args:         chat_jid: The JID of the c (+4 more)
 
 ### Community 6 - "Bridge Token & Startup"
 Cohesion: 0.26
@@ -296,7 +296,7 @@ Nodes (12): int, get_contact_chats(), get_message_context(), int, Get all WhatsA
 
 ### Community 79 - "Community 79"
 Cohesion: 0.18
-Nodes (10): Send a WhatsApp message to a person or group. For group chats use the JID., Send a WhatsApp message to a person or group. For group chats use the JID., Send a WhatsApp message to a person or group. For group chats use the JID., Send a WhatsApp message to a person or group. For group chats use the JID., Handle shutdown signals gracefully to prevent zombie processes., Handle shutdown signals gracefully to prevent zombie processes., Handle shutdown signals gracefully to prevent zombie processes., Handle shutdown signals gracefully to prevent zombie processes. (+2 more)
+Nodes (10): get_direct_chat_by_contact(), Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Handle shutdown signals gracefully to prevent zombie processes., Handle shutdown signals gracefully to prevent zombie processes., Handle shutdown signals gracefully to prevent zombie processes. (+2 more)
 
 ### Community 80 - "Community 80"
 Cohesion: 0.27
@@ -307,8 +307,8 @@ Cohesion: 0.22
 Nodes (10): Any, get_contact(), Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Look up a WhatsApp contact by phone number, LID, or full JID.      Automatically, Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Look up a WhatsApp contact by phone number, LID, or full JID.      Automatically, Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Search WhatsApp contacts by name or phone number.      Args:         query: Sear (+2 more)
 
 ### Community 82 - "Community 82"
-Cohesion: 0.40
-Nodes (5): Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, send_file()
+Cohesion: 0.33
+Nodes (6): str, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, send_file()
 
 ### Community 83 - "Community 83"
 Cohesion: 0.33
@@ -323,19 +323,19 @@ Cohesion: 0.40
 Nodes (5): get_last_interaction(), Get most recent WhatsApp message involving the contact.      Args:         jid:, Get most recent WhatsApp message involving the contact.      Args:         jid:, Get most recent WhatsApp message involving the contact.      Args:         jid:, Get most recent WhatsApp message involving the contact.      Args:         jid:
 
 ### Community 86 - "Community 86"
-Cohesion: 0.33
-Nodes (6): str, get_direct_chat_by_contact(), Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho
+Cohesion: 0.40
+Nodes (5): list_chats(), Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search
 
 ### Community 87 - "Community 87"
-Cohesion: 0.50
-Nodes (3): log(), str, Pre-warm and hold the WhatsApp MCP server's Python module cache.  Launched by au
+Cohesion: 0.40
+Nodes (5): Send a WhatsApp message to a person or group. For group chats use the JID., Send a WhatsApp message to a person or group. For group chats use the JID., Send a WhatsApp message to a person or group. For group chats use the JID., Send a WhatsApp message to a person or group. For group chats use the JID., send_message()
 
 ### Community 88 - "Community 88"
 Cohesion: 0.40
 Nodes (5): Send any audio file as a WhatsApp audio message to the specified recipient. For, Send any audio file as a WhatsApp audio message to the specified recipient. For, Send any audio file as a WhatsApp audio message to the specified recipient. For, Send any audio file as a WhatsApp audio message to the specified recipient. For, send_audio_message()
 
 ## Knowledge Gaps
-- **219 isolated node(s):** `release-type`, `include-v-in-tag`, `include-component-in-tag`, `changelog-path`, `extra-files` (+214 more)
+- **218 isolated node(s):** `release-type`, `include-v-in-tag`, `include-component-in-tag`, `changelog-path`, `extra-files` (+213 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **36 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -343,15 +343,15 @@ Nodes (5): Send any audio file as a WhatsApp audio message to the specified reci
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `downloadMedia()` connect `Go SQLite Data Types` to `WhatsApp MCP Test Suite`, `Media Path Safety`, `List Chats Tests`, `Community 76`, `LID Migration`, `Community 80`, `Community 83`?**
-  _High betweenness centrality (0.149) - this node is a cross-community bridge._
+  _High betweenness centrality (0.151) - this node is a cross-community bridge._
 - **Why does `handleMessage()` connect `Go SQLite Data Types` to `Audio Conversion & REST Auth`, `Docs & CI Architecture`?**
-  _High betweenness centrality (0.058) - this node is a cross-community bridge._
+  _High betweenness centrality (0.059) - this node is a cross-community bridge._
 - **Why does `newRESTMux()` connect `Go SQLite Data Types` to `Media Path Safety`, `Docs & CI Architecture`, `Chat Sync & Metadata`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Are the 20 inferred relationships involving `handleMessage()` (e.g. with `SendWebhook()` and `SendWebhookWithMedia()`) actually correct?**
   _`handleMessage()` has 20 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `release-type`, `include-v-in-tag`, `include-component-in-tag` to the rest of the system?**
-  _358 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _356 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `WhatsApp MCP Test Suite` be split into smaller, more focused modules?**
   _Cohesion score 0.11092436974789915 - nodes in this community are weakly interconnected._
 - **Should `Go SQLite Data Types` be split into smaller, more focused modules?**

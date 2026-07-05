@@ -1,0 +1,787 @@
+{
+  "communities": {
+    "0": [
+      "any",
+      "bool",
+      "concept_rest_api",
+      "int",
+      "str",
+      "test_whatsapp_testresolvelidtophone",
+      "test_whatsapp_testsenderaliases",
+      "tests_test_whatsapp_rationale_1",
+      "tests_test_whatsapp_rationale_105",
+      "tests_test_whatsapp_rationale_12",
+      "tests_test_whatsapp_rationale_121",
+      "tests_test_whatsapp_rationale_135",
+      "tests_test_whatsapp_rationale_151",
+      "tests_test_whatsapp_rationale_214",
+      "tests_test_whatsapp_rationale_37",
+      "tests_test_whatsapp_rationale_53",
+      "tests_test_whatsapp_rationale_73",
+      "tests_test_whatsapp_rationale_92",
+      "tests_test_whatsapp_testchatconversion",
+      "tests_test_whatsapp_testchatconversion_test_chat_to_dict_dm",
+      "tests_test_whatsapp_testchatconversion_test_chat_to_dict_group",
+      "tests_test_whatsapp_testchatconversion_test_chat_to_dict_no_last_message",
+      "tests_test_whatsapp_testcontactconversion",
+      "tests_test_whatsapp_testcontactconversion_test_contact_to_dict",
+      "tests_test_whatsapp_testcontactconversion_test_contact_to_dict_no_name",
+      "tests_test_whatsapp_testmessageconversion",
+      "tests_test_whatsapp_testmessageconversion_test_msg_to_dict_basic",
+      "tests_test_whatsapp_testmessageconversion_test_msg_to_dict_from_me",
+      "tests_test_whatsapp_testmessageconversion_test_msg_to_dict_with_media",
+      "tests_test_whatsapp_testresolvelidtophone_test_returns_none_when_bridge_returns_empty_phone",
+      "tests_test_whatsapp_testsenderaliases_test_falls_back_to_db_when_bridge_returns_error_status",
+      "tests_test_whatsapp_testsenderaliases_test_falls_back_to_db_when_bridge_unavailable",
+      "tests_test_whatsapp_testsenderaliases_test_falls_back_when_bridge_returns_empty_aliases",
+      "tests_test_whatsapp_testsenderaliases_test_falls_back_when_bridge_returns_malformed_json",
+      "tests_test_whatsapp_testsenderaliases_test_resolves_lid_via_bridge",
+      "whatsapp_bridge_main_messagesdb",
+      "whatsapp_db_whatsmeow_lid_map",
+      "whatsapp_mcp_server_tests_test_whatsapp_py",
+      "whatsapp_mcp_server_whatsapp_bridgeheaders",
+      "whatsapp_mcp_server_whatsapp_chat",
+      "whatsapp_mcp_server_whatsapp_chat_is_group",
+      "whatsapp_mcp_server_whatsapp_chat_to_dict",
+      "whatsapp_mcp_server_whatsapp_contact",
+      "whatsapp_mcp_server_whatsapp_contact_to_dict",
+      "whatsapp_mcp_server_whatsapp_downloadmedia",
+      "whatsapp_mcp_server_whatsapp_format_message",
+      "whatsapp_mcp_server_whatsapp_format_messages_list",
+      "whatsapp_mcp_server_whatsapp_getchat",
+      "whatsapp_mcp_server_whatsapp_getcontactchats",
+      "whatsapp_mcp_server_whatsapp_getdirectchatbycontact",
+      "whatsapp_mcp_server_whatsapp_getlastinteraction",
+      "whatsapp_mcp_server_whatsapp_getmessagecontext",
+      "whatsapp_mcp_server_whatsapp_getsendername",
+      "whatsapp_mcp_server_whatsapp_listchats",
+      "whatsapp_mcp_server_whatsapp_listmessages",
+      "whatsapp_mcp_server_whatsapp_message",
+      "whatsapp_mcp_server_whatsapp_messagecontext",
+      "whatsapp_mcp_server_whatsapp_msg_to_dict",
+      "whatsapp_mcp_server_whatsapp_py",
+      "whatsapp_mcp_server_whatsapp_rationale_141",
+      "whatsapp_mcp_server_whatsapp_rationale_199",
+      "whatsapp_mcp_server_whatsapp_rationale_209",
+      "whatsapp_mcp_server_whatsapp_rationale_318",
+      "whatsapp_mcp_server_whatsapp_rationale_362",
+      "whatsapp_mcp_server_whatsapp_rationale_486",
+      "whatsapp_mcp_server_whatsapp_rationale_590",
+      "whatsapp_mcp_server_whatsapp_rationale_678",
+      "whatsapp_mcp_server_whatsapp_rationale_73",
+      "whatsapp_mcp_server_whatsapp_rationale_751",
+      "whatsapp_mcp_server_whatsapp_rationale_807",
+      "whatsapp_mcp_server_whatsapp_rationale_868",
+      "whatsapp_mcp_server_whatsapp_rationale_92",
+      "whatsapp_mcp_server_whatsapp_rationale_927",
+      "whatsapp_mcp_server_whatsapp_readbridgetoken",
+      "whatsapp_mcp_server_whatsapp_resolvenamefromwhatsmeow",
+      "whatsapp_mcp_server_whatsapp_searcontacts",
+      "whatsapp_mcp_server_whatsapp_send_audio_message",
+      "whatsapp_mcp_server_whatsapp_send_file",
+      "whatsapp_mcp_server_whatsapp_send_message",
+      "whatsapp_mcp_server_whatsapp_sendfile",
+      "whatsapp_mcp_server_whatsapp_sendmessage",
+      "whatsapp_resolve_lid_to_phone",
+      "whatsapp_sender_aliases"
+    ],
+    "1": [
+      "autostart_ps1",
+      "basiccallmeta",
+      "concept_ephemeral_settings",
+      "concept_lid_resolution",
+      "contextinfo",
+      "db",
+      "disappearingmode",
+      "historysync",
+      "messageinfo",
+      "servemux",
+      "whatsapp_bridge_chatephemeralsettings",
+      "whatsapp_bridge_downloadmediarequest",
+      "whatsapp_bridge_downloadmediaresponse",
+      "whatsapp_bridge_main_analyzeoggopus",
+      "whatsapp_bridge_main_applychatephemeralsettings",
+      "whatsapp_bridge_main_builddisappearingmode",
+      "whatsapp_bridge_main_callchatjid",
+      "whatsapp_bridge_main_ensurecolumn",
+      "whatsapp_bridge_main_ensuremessagestoreschema",
+      "whatsapp_bridge_main_extractchatephemeralfrommessage",
+      "whatsapp_bridge_main_extractdirectpathfromurl",
+      "whatsapp_bridge_main_extractquotedmessageinfo",
+      "whatsapp_bridge_main_extracttextcontent",
+      "whatsapp_bridge_main_getchatephemeralsettings",
+      "whatsapp_bridge_main_getchatname",
+      "whatsapp_bridge_main_getenvbool",
+      "whatsapp_bridge_main_go",
+      "whatsapp_bridge_main_go_client",
+      "whatsapp_bridge_main_go_jid",
+      "whatsapp_bridge_main_go_logger",
+      "whatsapp_bridge_main_go_time",
+      "whatsapp_bridge_main_handlecalloffer",
+      "whatsapp_bridge_main_handlehistorysync",
+      "whatsapp_bridge_main_main",
+      "whatsapp_bridge_main_mergeephemeralcontextinfo",
+      "whatsapp_bridge_main_migratelegacylidchatstophonejids",
+      "whatsapp_bridge_main_migratelegacylidsenderstophones",
+      "whatsapp_bridge_main_min",
+      "whatsapp_bridge_main_newmessagestore",
+      "whatsapp_bridge_main_newrestmux",
+      "whatsapp_bridge_main_placeholderwaveform",
+      "whatsapp_bridge_main_resolvelidchat",
+      "whatsapp_bridge_main_resolverecipientjid",
+      "whatsapp_bridge_main_resolveuserjid",
+      "whatsapp_bridge_main_senderaltformessage",
+      "whatsapp_bridge_main_sendwhatsappmessage",
+      "whatsapp_bridge_main_startrestserver",
+      "whatsapp_bridge_main_storechat",
+      "whatsapp_bridge_main_storemessage",
+      "whatsapp_bridge_main_updatechatephemeralsettings",
+      "whatsapp_bridge_main_updatechatephemeralsettingsfromprotocolmessage",
+      "whatsapp_bridge_main_whatsappdb",
+      "whatsapp_bridge_message",
+      "whatsapp_bridge_messagestore",
+      "whatsapp_bridge_messagestore_close",
+      "whatsapp_bridge_messagestore_getchatephemeralsettings",
+      "whatsapp_bridge_messagestore_getchats",
+      "whatsapp_bridge_messagestore_getmediainfo",
+      "whatsapp_bridge_messagestore_getmessages",
+      "whatsapp_bridge_messagestore_markcallanswered",
+      "whatsapp_bridge_messagestore_markcallrejected",
+      "whatsapp_bridge_messagestore_markcallterminated",
+      "whatsapp_bridge_messagestore_markmessagedeleted",
+      "whatsapp_bridge_messagestore_migratelegacylidchatstophonejids",
+      "whatsapp_bridge_messagestore_migratelegacylidsenderstophones",
+      "whatsapp_bridge_messagestore_storecalloffer",
+      "whatsapp_bridge_messagestore_storechat",
+      "whatsapp_bridge_messagestore_storemediainfo",
+      "whatsapp_bridge_messagestore_storemessage",
+      "whatsapp_bridge_messagestore_updatechatephemeralsettings",
+      "whatsapp_bridge_sendmessagerequest",
+      "whatsapp_bridge_sendmessageresponse",
+      "whatsapp_mcp_server_audio_converttooopusogg",
+      "whatsapp_mcp_server_audio_py",
+      "whatsapp_mcp_server_whatsapp_sendaudiomessage"
+    ],
+    "2": [
+      "2026_05_31_lid_resolution_consolidation_lid_resolution_consolidation_implementation_plan",
+      "lidstore",
+      "main_api_resolve",
+      "main_resolveresponse",
+      "main_test_testresolveendpoint_lidtophone",
+      "main_test_testresolveendpoint_nomappingreturnsphonealiases",
+      "main_test_testresolveendpoint_phonetolid",
+      "message",
+      "messagestore",
+      "nullint64",
+      "nullstring",
+      "server",
+      "t",
+      "webhookpayload",
+      "whatsapp_bridge_main_handlemessage",
+      "whatsapp_bridge_main_markMessageDeleted",
+      "whatsapp_bridge_main_test_buildimagemessage",
+      "whatsapp_bridge_main_test_buildtextmessage",
+      "whatsapp_bridge_main_test_capturewebhook",
+      "whatsapp_bridge_main_test_go",
+      "whatsapp_bridge_main_test_go_client",
+      "whatsapp_bridge_main_test_go_logger",
+      "whatsapp_bridge_main_test_go_time",
+      "whatsapp_bridge_main_test_newtestclient",
+      "whatsapp_bridge_main_test_newtestclientwithself",
+      "whatsapp_bridge_main_test_newtestmessagestore",
+      "whatsapp_bridge_main_test_querycallresult",
+      "whatsapp_bridge_main_test_querychat",
+      "whatsapp_bridge_main_test_querychatlastmessagetime",
+      "whatsapp_bridge_main_test_querymessagecount",
+      "whatsapp_bridge_main_test_querysender",
+      "whatsapp_bridge_main_test_readdeletedat",
+      "whatsapp_bridge_main_test_revokeevent",
+      "whatsapp_bridge_main_test_testapplychatephemeralsettingsconvertsconversation",
+      "whatsapp_bridge_main_test_testcallchatjid_precedence",
+      "whatsapp_bridge_main_test_testcallstatemachine_acceptandrejectarenoopafterterminate",
+      "whatsapp_bridge_main_test_testcallstatemachine_alltransitions",
+      "whatsapp_bridge_main_test_testextractchatephemeralfrommessage",
+      "whatsapp_bridge_main_test_testextracttextcontent_surfacesmediacaptions",
+      "whatsapp_bridge_main_test_testhandlehistorysync_lidparticipant_resolvedviastore",
+      "whatsapp_bridge_main_test_testhandlemessage_backfillsephemeralfromcontextinfo",
+      "whatsapp_bridge_main_test_testhandlemessage_duplicaterevokekeepsearliestdeletedat",
+      "whatsapp_bridge_main_test_testhandlemessage_groupparticipantlid_resolvedviastore",
+      "whatsapp_bridge_main_test_testhandlemessage_imageonly_webhookforwarded",
+      "whatsapp_bridge_main_test_testhandlemessage_imagewithcaption_webhookforwarded",
+      "whatsapp_bridge_main_test_testhandlemessage_incominglid_senderresolvedfromalt",
+      "whatsapp_bridge_main_test_testhandlemessage_incominglidmessage_storedunderphonejid",
+      "whatsapp_bridge_main_test_testhandlemessage_lidwithoutmapping_senderfallsbacktolid",
+      "whatsapp_bridge_main_test_testhandlemessage_lidwithstorefallback_storedunderphonejid",
+      "whatsapp_bridge_main_test_testhandlemessage_outgoingfromself_senderisownphone",
+      "whatsapp_bridge_main_test_testhandlemessage_outgoinglidmessage_storedunderphonejid",
+      "whatsapp_bridge_main_test_testhandlemessage_panicrecovery",
+      "whatsapp_bridge_main_test_testhandlemessage_phonejid_unaffected",
+      "whatsapp_bridge_main_test_testhandlemessage_regularmessagedoesnotmarkdeleted",
+      "whatsapp_bridge_main_test_testhandlemessage_replayedoriginalpreservesdeletedat",
+      "whatsapp_bridge_main_test_testhandlemessage_revokeisnoopforunknowntarget",
+      "whatsapp_bridge_main_test_testhandlemessage_revokemarkstargetdeleted",
+      "whatsapp_bridge_main_test_testlogger",
+      "whatsapp_bridge_main_test_testmigratelegacylidchatstophonejids_aggregatesbyphonejiddeterministically",
+      "whatsapp_bridge_main_test_testmigratelegacylidchatstophonejids_migratesandisidempotent",
+      "whatsapp_bridge_main_test_testmigratelegacylidchatstophonejids_missingwhatsappdbisnoop",
+      "whatsapp_bridge_main_test_testmigratelegacylidsenderstophones_missingwhatsappdbisnoop",
+      "whatsapp_bridge_main_test_testmigratelegacylidsenderstophones_rewritesandisidempotent",
+      "whatsapp_bridge_main_test_testnewmessagestore_waljournalmode",
+      "whatsapp_bridge_main_test_testresolverecipientjidresolvesphonetocachedlid",
+      "whatsapp_bridge_main_test_testsendhandlerlogscallerbeforedecode",
+      "whatsapp_bridge_main_test_testsendwebhookpayload_retriesontransientfailure",
+      "whatsapp_bridge_main_test_teststorechatpreservesephemeralsettings",
+      "whatsapp_bridge_main_test_testupdatechatephemeralsettings_ignoreszerotimestamp"
+    ],
+    "3": [
+      "agents_agents_md",
+      "agents_ci_blocking_gates",
+      "agents_ci_informational_gates",
+      "agents_data_flow",
+      "agents_env_vars",
+      "agents_go_bridge",
+      "agents_jid_concept",
+      "agents_pr_rules",
+      "agents_python_mcp_server",
+      "agents_single_source_of_truth",
+      "agents_sqlite_messagesdb",
+      "agents_sqlite_whatsappdb",
+      "agents_webhook_system",
+      "agents_whatsmeow_lid_map",
+      "claude_claude_md",
+      "claude_graphify",
+      "claude_md_claude_md",
+      "config_issue_template",
+      "contributing_contributing_md",
+      "contributing_conventional_commits",
+      "contributing_workflow",
+      "dependabot_dependabot_yml",
+      "feature_template_feature_request",
+      "golangci_golangci_yml",
+      "pr_template_pr_template",
+      "readme_bridge_auth",
+      "readme_calls_table",
+      "readme_fastmcp",
+      "readme_full_history_pair",
+      "readme_mcp_tools",
+      "readme_media_confinement",
+      "readme_readme_md",
+      "readme_security_notice",
+      "readme_whatsmeow",
+      "roadmap_in_scope",
+      "roadmap_north_star",
+      "roadmap_out_of_scope",
+      "roadmap_roadmap_md",
+      "roadmap_semver",
+      "security_private_disclosure",
+      "security_security_md",
+      "security_supported_versions",
+      "security_threat_model",
+      "setupguide_cgo_sqlite",
+      "setupguide_scheduled_task",
+      "setupguide_store_location",
+      "setupguide_windows_setup",
+      "workflows_ci_ci_workflow",
+      "workflows_ci_go_build",
+      "workflows_ci_python_test",
+      "workflows_security_workflow"
+    ],
+    "4": [
+      "github_scripts_check_versions",
+      "github_scripts_check_versions_py_int",
+      "github_scripts_check_versions_py_str",
+      "release_please_config",
+      "scripts_check_versions_main",
+      "scripts_check_versions_normalize_tag",
+      "scripts_check_versions_read_pyproject_version",
+      "scripts_check_versions_read_server_json_versions",
+      "server_json",
+      "whatsapp_bridge_release_please_config_bootstrap_sha",
+      "whatsapp_bridge_release_please_config_packages",
+      "whatsapp_bridge_release_please_config_schema",
+      "whatsapp_bridge_server_description",
+      "whatsapp_bridge_server_name",
+      "whatsapp_bridge_server_packages",
+      "whatsapp_bridge_server_repository",
+      "whatsapp_bridge_server_schema",
+      "whatsapp_bridge_server_title",
+      "whatsapp_bridge_server_tools",
+      "whatsapp_bridge_server_version",
+      "whatsapp_bridge_server_websiteurl"
+    ],
+    "5": [
+      "whatsapp_bridge_main_downloadmedia",
+      "whatsapp_mcp_server_main_get_chat",
+      "whatsapp_mcp_server_main_get_contact",
+      "whatsapp_mcp_server_main_get_contact_chats",
+      "whatsapp_mcp_server_main_get_direct_chat_by_contact",
+      "whatsapp_mcp_server_main_get_last_interaction",
+      "whatsapp_mcp_server_main_get_message_context",
+      "whatsapp_mcp_server_main_list_chats",
+      "whatsapp_mcp_server_main_list_messages",
+      "whatsapp_mcp_server_main_py",
+      "whatsapp_mcp_server_main_py_any",
+      "whatsapp_mcp_server_main_py_bool",
+      "whatsapp_mcp_server_main_py_int",
+      "whatsapp_mcp_server_main_py_str",
+      "whatsapp_mcp_server_main_search_contacts",
+      "whatsapp_mcp_server_main_send_audio_message",
+      "whatsapp_mcp_server_main_send_file",
+      "whatsapp_mcp_server_main_send_message",
+      "whatsapp_mcp_server_main_shutdown_handler",
+      "whatsapp_mcp_server_whatsapp_rationale_1073"
+    ],
+    "6": [
+      "example_use_claude_interface",
+      "example_use_finding_contact_flow",
+      "example_use_get_direct_chat_by_contact_tool",
+      "example_use_getting_replies_flow",
+      "example_use_haiku_content",
+      "example_use_screenshot",
+      "example_use_search_contacts_tool",
+      "example_use_send_message_tool",
+      "example_use_sending_message_flow",
+      "example_use_user_prompt",
+      "example_use_whatsapp_local_bridge",
+      "example_use_whatsapp_mcp"
+    ],
+    "7": [
+      "mediatype",
+      "whatsapp_bridge_main_classifymediapath",
+      "whatsapp_bridge_main_extractmediainfo",
+      "whatsapp_bridge_mediadownloader",
+      "whatsapp_bridge_mediadownloader_getdirectpath",
+      "whatsapp_bridge_mediadownloader_getfileencsha256",
+      "whatsapp_bridge_mediadownloader_getfilelength",
+      "whatsapp_bridge_mediadownloader_getfilesha256",
+      "whatsapp_bridge_mediadownloader_getmediakey",
+      "whatsapp_bridge_mediadownloader_getmediatype",
+      "whatsapp_bridge_mediadownloader_geturl"
+    ],
+    "8": [
+      "whatsapp_bridge_media_path_test_go",
+      "whatsapp_bridge_media_path_test_go_t",
+      "whatsapp_bridge_media_path_test_testpathhasprefix",
+      "whatsapp_bridge_media_path_test_testresolvemediarootsacceptsenvlist",
+      "whatsapp_bridge_media_path_test_testresolvemediarootsrejectsrelativeenv",
+      "whatsapp_bridge_media_path_test_testvalidatemediapathacceptsfileinsideroot",
+      "whatsapp_bridge_media_path_test_testvalidatemediapathrejectsdirectory",
+      "whatsapp_bridge_media_path_test_testvalidatemediapathrejectsoutsideroot",
+      "whatsapp_bridge_media_path_test_testvalidatemediapathrejectsrelative",
+      "whatsapp_bridge_media_path_test_testvalidatemediapathrejectssymlinkescape",
+      "whatsapp_bridge_media_path_test_writefile"
+    ],
+    "9": [
+      "concept_bearer_auth",
+      "whatsapp_bridge_auth_bridgetokenfile",
+      "whatsapp_bridge_auth_buildallowdhosts",
+      "whatsapp_bridge_auth_checkbearertoken",
+      "whatsapp_bridge_auth_go",
+      "whatsapp_bridge_auth_hostallowed",
+      "whatsapp_bridge_auth_loadorcreatebridgetoken",
+      "whatsapp_bridge_auth_printtokenbanner",
+      "whatsapp_bridge_auth_witauth"
+    ],
+    "10": [
+      "whatsapp_bridge_auth_test_go",
+      "whatsapp_bridge_auth_test_go_t",
+      "whatsapp_bridge_auth_test_testcheckbearertoken",
+      "whatsapp_bridge_auth_test_testhostallowed",
+      "whatsapp_bridge_auth_test_testloadorcreatebridgetokenfromenv",
+      "whatsapp_bridge_auth_test_testloadorcreatebridgetokenrejectsshortenv",
+      "whatsapp_bridge_auth_test_testwithauthacceptsvalidrequest",
+      "whatsapp_bridge_auth_test_testwithauthrejectsbadhost",
+      "whatsapp_bridge_auth_test_testwithauthrejectsmissingtoken"
+    ],
+    "11": [
+      "agents_release_please",
+      "changelog_changelog_md",
+      "changelog_v010",
+      "changelog_v020",
+      "changelog_v021",
+      "docs_releasing_releasing_md",
+      "workflows_release_manual_fallback",
+      "workflows_release_please_artifacts",
+      "workflows_release_please_workflow"
+    ],
+    "12": [
+      "tests_test_list_chats_make_messages_db",
+      "tests_test_list_chats_messages_db",
+      "tests_test_list_chats_rationale_1",
+      "tests_test_list_chats_test_get_chat_missing_jid_returns_none",
+      "tests_test_list_chats_test_get_chat_with_last_message",
+      "tests_test_list_chats_test_list_chats_query_filter_with_include_last_message_false",
+      "tests_test_list_chats_test_list_chats_with_last_message",
+      "whatsapp_mcp_server_tests_test_list_chats_py"
+    ],
+    "13": [
+      "tests_test_bridge_auth_dummyresponse",
+      "tests_test_bridge_auth_test_bridge_headers_falls_back_to_token_file",
+      "tests_test_bridge_auth_test_bridge_headers_prefers_env_over_token_file",
+      "tests_test_bridge_auth_test_bridge_headers_uses_env_token",
+      "tests_test_bridge_auth_test_bridge_post_helpers_include_auth_headers",
+      "tests_test_bridge_auth_test_send_message_without_token_surfaces_bridge_401",
+      "whatsapp_mcp_server_tests_test_bridge_auth_py"
+    ],
+    "14": [
+      "context",
+      "noopstore",
+      "whatsapp_bridge_main_test_go_jid",
+      "whatsapp_bridge_mocklidstore",
+      "whatsapp_bridge_mocklidstore_getlidforpn",
+      "whatsapp_bridge_mocklidstore_getpnforlid"
+    ],
+    "15": [
+      "concept_media_confinement",
+      "whatsapp_bridge_media_path_canonicalizepath",
+      "whatsapp_bridge_media_path_go",
+      "whatsapp_bridge_media_path_pathhasprefix",
+      "whatsapp_bridge_media_path_resolvemediaroots",
+      "whatsapp_bridge_media_path_validatemediapath"
+    ],
+    "16": [
+      "tests_test_get_contact_test_get_contact_backward_compatible_phone_number_param",
+      "tests_test_get_contact_test_get_contact_falls_back_to_lid_for_14_digit_numeric_identifier",
+      "tests_test_get_contact_test_get_contact_normalizes_lid",
+      "tests_test_get_contact_test_get_contact_normalizes_phone_number",
+      "tests_test_get_contact_test_get_contact_unresolved_falls_back_to_jid_user",
+      "whatsapp_mcp_server_tests_test_get_contact_py"
+    ],
+    "17": [
+      "whatsapp_bridge_webhook_go",
+      "whatsapp_bridge_webhook_sendwebhook",
+      "whatsapp_bridge_webhook_sendwebhookpayload",
+      "whatsapp_bridge_webhook_sendwebhookwithmedia",
+      "whatsapp_bridge_webhookpayload"
+    ],
+    "18": [
+      "claude_settings_hooks",
+      "claude_settings_hooks_pretooluse",
+      "claude_settings_json"
+    ],
+    "19": [
+      "agents_repo_fork",
+      "changelog_fork_history"
+    ],
+    "20": [
+      "release_please_manifest",
+      "whatsapp_bridge_release_please_manifest"
+    ],
+    "21": [
+      "whatsapp_bridge_release_please_config_release_type"
+    ],
+    "22": [
+      "whatsapp_bridge_release_please_config_include_v_in_tag"
+    ],
+    "23": [
+      "whatsapp_bridge_release_please_config_include_component_in_tag"
+    ],
+    "24": [
+      "whatsapp_bridge_release_please_config_changelog_path"
+    ],
+    "25": [
+      "whatsapp_bridge_release_please_config_extra_files"
+    ],
+    "26": [
+      "whatsapp_bridge_server_repository_url"
+    ],
+    "27": [
+      "whatsapp_bridge_server_repository_source"
+    ],
+    "28": [
+      "handlerfunc"
+    ],
+    "29": [
+      "whatsapp_mcp_server_audio_rationale_7"
+    ],
+    "30": [
+      "whatsapp_mcp_server_audio_rationale_68"
+    ],
+    "31": [
+      "whatsapp_mcp_server_main_rationale_53"
+    ],
+    "32": [
+      "whatsapp_mcp_server_main_rationale_68"
+    ],
+    "33": [
+      "whatsapp_mcp_server_main_rationale_167"
+    ],
+    "34": [
+      "whatsapp_mcp_server_main_rationale_210"
+    ],
+    "35": [
+      "whatsapp_mcp_server_main_rationale_229"
+    ],
+    "36": [
+      "whatsapp_mcp_server_main_rationale_241"
+    ],
+    "37": [
+      "whatsapp_mcp_server_main_rationale_252"
+    ],
+    "38": [
+      "whatsapp_mcp_server_main_rationale_265"
+    ],
+    "39": [
+      "whatsapp_mcp_server_main_rationale_279"
+    ],
+    "40": [
+      "whatsapp_mcp_server_main_rationale_292"
+    ],
+    "41": [
+      "whatsapp_mcp_server_main_rationale_313"
+    ],
+    "42": [
+      "whatsapp_mcp_server_main_rationale_331"
+    ],
+    "43": [
+      "whatsapp_mcp_server_main_rationale_347"
+    ],
+    "44": [
+      "whatsapp_mcp_server_main_rationale_365"
+    ],
+    "45": [
+      "whatsapp_mcp_server_whatsapp_rationale_183"
+    ],
+    "46": [
+      "tests_test_bridge_auth_dummyresponse_init"
+    ],
+    "47": [
+      "tests_test_bridge_auth_dummyresponse_json"
+    ],
+    "48": [
+      "tests_test_list_chats_rationale_17"
+    ],
+    "49": [
+      "tests_test_list_chats_rationale_76"
+    ],
+    "50": [
+      "tests_test_list_chats_rationale_86"
+    ],
+    "51": [
+      "tests_test_list_chats_rationale_98"
+    ],
+    "52": [
+      "tests_test_list_chats_rationale_116"
+    ],
+    "53": [
+      "tests_test_whatsapp_rationale_9"
+    ],
+    "54": [
+      "tests_test_whatsapp_rationale_70"
+    ],
+    "55": [
+      "tests_test_whatsapp_rationale_118"
+    ],
+    "56": [
+      "whatsapp_mcp_server_tests_init_py"
+    ],
+    "57": [
+      "whatsapp_bridge_main_getmessages"
+    ],
+    "58": [
+      "whatsapp_bridge_main_getmediainfo"
+    ],
+    "59": [
+      "whatsapp_bridge_main_storemediainfo"
+    ],
+    "60": [
+      "whatsapp_mcp_server_main_runserver"
+    ],
+    "61": [
+      "concept_mcp_server"
+    ],
+    "62": [
+      "concept_webhook"
+    ],
+    "63": [
+      "contributing_code_style"
+    ],
+    "64": [
+      "bug_template_bug_report"
+    ],
+    "65": [
+      "workflows_dependabot_auto_merge"
+    ]
+  },
+  "cohesion": {
+    "0": 0.05965324713488099,
+    "1": 0.05945945945945946,
+    "2": 0.10741687979539642,
+    "3": 0.05019607843137255,
+    "4": 0.10952380952380952,
+    "5": 0.25263157894736843,
+    "6": 0.25757575757575757,
+    "7": 0.2727272727272727,
+    "8": 0.32727272727272727,
+    "9": 0.2222222222222222,
+    "10": 0.3888888888888889,
+    "11": 0.2222222222222222,
+    "12": 0.25,
+    "13": 0.2857142857142857,
+    "14": 0.5333333333333333,
+    "15": 0.3333333333333333,
+    "16": 0.3333333333333333,
+    "17": 0.7,
+    "18": 0.6666666666666666,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0
+  },
+  "gods": [
+    {
+      "id": "whatsapp_bridge_main_handlemessage",
+      "label": "handleMessage()",
+      "degree": 43
+    },
+    {
+      "id": "t",
+      "label": "T",
+      "degree": 41
+    },
+    {
+      "id": "whatsapp_bridge_main_test_newtestmessagestore",
+      "label": "newTestMessageStore()",
+      "degree": 34
+    },
+    {
+      "id": "whatsapp_bridge_messagestore",
+      "label": "MessageStore",
+      "degree": 28
+    },
+    {
+      "id": "whatsapp_bridge_main_test_newtestclient",
+      "label": "newTestClient()",
+      "degree": 25
+    },
+    {
+      "id": "whatsapp_bridge_main_test_testlogger",
+      "label": "testLogger()",
+      "degree": 25
+    },
+    {
+      "id": "str",
+      "label": "str",
+      "degree": 21
+    },
+    {
+      "id": "whatsapp_bridge_main_main",
+      "label": "main()",
+      "degree": 17
+    },
+    {
+      "id": "whatsapp_bridge_main_handlehistorysync",
+      "label": "handleHistorySync()",
+      "degree": 17
+    },
+    {
+      "id": "whatsapp_bridge_main_sendwhatsappmessage",
+      "label": "sendWhatsAppMessage()",
+      "degree": 15
+    }
+  ],
+  "surprises": [
+    {
+      "source": "resolveLIDChat()",
+      "target": "_sender_aliases",
+      "source_files": [
+        "whatsapp-bridge/main.go",
+        "whatsapp-mcp-server/whatsapp.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "analyzeOggOpus()",
+      "target": "convert_to_opus_ogg",
+      "source_files": [
+        "whatsapp-bridge/main.go",
+        "whatsapp-mcp-server/audio.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Bearer-token + Host-header authentication",
+      "target": "_bridge_headers",
+      "source_files": [
+        "whatsapp-bridge/auth.go",
+        "whatsapp-mcp-server/whatsapp.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `Bearer-token + Host-header authentication` unexpectedly reaches hub `_bridge_headers`"
+    },
+    {
+      "source": "LID Resolution Consolidation Implementation Plan",
+      "target": "/api/resolve",
+      "source_files": [
+        "docs/superpowers/plans/2026-05-31-lid-resolution-consolidation.md",
+        "whatsapp-bridge/main.go"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "implements",
+      "why": "crosses file types (doc \u2194 code); connects across different repos/directories; peripheral node `LID Resolution Consolidation Implementation Plan` unexpectedly reaches hub `/api/resolve`"
+    },
+    {
+      "source": "_sender_aliases",
+      "target": "whatsmeow_lid_map",
+      "source_files": [
+        "whatsapp-mcp-server/whatsapp.py",
+        "whatsapp.db"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (code \u2194 doc); connects across different repos/directories; peripheral node `whatsmeow_lid_map` unexpectedly reaches hub `_sender_aliases`"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
