@@ -12,13 +12,19 @@ $logFile   = "$env:TEMP\bridge.log"
 # 60s MCP initialize timeout.
 & "C:\Windows\System32\wsl.exe" bash -c "echo wsl-ready" | Out-Null
 
-# Pre-warm Python venv page cache in background.
-# WSL ext4 cold boot takes 40-60s to import Python packages (VHDX reads via Windows I/O).
-# Starting this warmup early seeds the OS page cache so MCP server imports complete in
-# ~5s (from warm cache) rather than 40-60s, clearing the 60s MCP initialize timeout.
+# Pre-warm the Python module cache in background, then stay resident.
+# WSL ext4 cold boot takes 40-60s to import the MCP server's packages (VHDX
+# reads via Windows I/O), racing Claude Desktop's 60s initialize timeout.
+# The old one-shot subset-import warmup was unlogged and its effect did not
+# survive until Claude Desktop spawned the server (2026-07-05 cold boot:
+# import still took 40s, 13 minutes after login). warmhold.py imports the
+# real server module (full dependency set), logs timings to
+# %TEMP%\venv-warmup.log, and sleeps forever so the module pages stay mapped.
+# The bash below waits for /mnt/c to be mounted, then replaces any holder
+# left over from a previous session (the "$p" != "$$" guard keeps it from
+# killing itself, since this command line also contains "warmhold.py").
 Start-Job -ScriptBlock {
-    & "C:\Windows\System32\wsl.exe" -e bash -c `
-        "/home/gabriel/.whatsapp-mcp-venv/bin/python -c 'import mcp.server.fastmcp, httpx, anyio, mcp.types' 2>/dev/null"
+    & "C:\Windows\System32\wsl.exe" -e bash -c 'for i in $(seq 1 30); do [ -f /mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server/warmhold.py ] && break; sleep 2; done; for p in $(pgrep -f warmhold.py); do [ "$p" != "$$" ] && kill "$p" 2>/dev/null; done; cd /mnt/c/Users/gabri/Projects/whatsapp-bridge/whatsapp-mcp-server && exec /home/gabriel/.whatsapp-mcp-venv/bin/python warmhold.py'
 } | Out-Null
 
 # Wait until the Windows filesystem is mounted and the store is accessible.
