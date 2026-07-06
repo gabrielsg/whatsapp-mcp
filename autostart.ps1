@@ -12,7 +12,7 @@ $logFile   = "$env:TEMP\bridge.log"
 # default outbox and the store are listed explicitly alongside the
 # Stagencies folder. Widening this list widens what a prompt-injected
 # agent could exfiltrate via WhatsApp — keep it as narrow as practical.
-$mediaRoots = "/home/gabriel/.local/share/whatsapp-mcp/outbox:/mnt/c/Users/gabri/store:/mnt/c/Users/gabri/OneDrive/Documents/Stagencies-Gabriel"
+$mediaRoots = "/home/gabriel/.local/share/whatsapp-mcp/outbox:/mnt/c/Users/gabri/store:/mnt/c/Users/gabri/OneDrive/Documents/Stagencies-Gabriel/Employers"
 
 # Wake WSL immediately so it is warm before Claude Desktop tries to start MCP servers.
 # WSL cold start takes 15-30s; doing this first wins the race against Claude Desktop's
