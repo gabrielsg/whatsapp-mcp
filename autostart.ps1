@@ -7,6 +7,13 @@ $workDir   = "/mnt/c/Users/gabri"
 $storeFile = "/mnt/c/Users/gabri/store/whatsapp.db"
 $logFile   = "$env:TEMP\bridge.log"
 
+# Directories send_file may read from (colon-separated). Setting
+# WHATSAPP_MEDIA_ROOTS REPLACES the bridge's built-in default, so the
+# default outbox and the store are listed explicitly alongside the
+# Stagencies folder. Widening this list widens what a prompt-injected
+# agent could exfiltrate via WhatsApp — keep it as narrow as practical.
+$mediaRoots = "/home/gabriel/.local/share/whatsapp-mcp/outbox:/mnt/c/Users/gabri/store:/mnt/c/Users/gabri/OneDrive/Documents/Stagencies-Gabriel"
+
 # Wake WSL immediately so it is warm before Claude Desktop tries to start MCP servers.
 # WSL cold start takes 15-30s; doing this first wins the race against Claude Desktop's
 # 60s MCP initialize timeout.
@@ -50,7 +57,7 @@ if ($ready.Trim() -ne "yes") {
 # Keeps the bridge alive through transient WhatsApp disconnects or crashes.
 while ($true) {
     Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] starting bridge"
-    & "C:\Windows\System32\wsl.exe" bash -c "cd $workDir && $bridgeBin 2>&1" >> $logFile
+    & "C:\Windows\System32\wsl.exe" bash -c "cd $workDir && WHATSAPP_MEDIA_ROOTS='$mediaRoots' $bridgeBin 2>&1" >> $logFile
     $exitCode = $LASTEXITCODE
     Add-Content -Path $logFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [autostart] bridge exited (code $exitCode), restarting in 5s"
     Start-Sleep -Seconds 5
