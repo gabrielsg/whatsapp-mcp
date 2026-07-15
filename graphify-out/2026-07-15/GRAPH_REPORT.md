@@ -1,16 +1,16 @@
-# Graph Report - whatsapp-bridge  (2026-07-15)
+# Graph Report - whatsapp-bridge  (2026-07-05)
 
 ## Corpus Check
-- 50 files · ~160,284 words
+- 49 files · ~159,775 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 947 nodes · 2020 edges · 91 communities (54 shown, 37 thin omitted)
+- 937 nodes · 2006 edges · 89 communities (53 shown, 36 thin omitted)
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 137 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d3e87d1e`
+- Built from commit: `9266721d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -101,8 +101,6 @@
 - [[_COMMUNITY_Community 86|Community 86]]
 - [[_COMMUNITY_Community 87|Community 87]]
 - [[_COMMUNITY_Community 88|Community 88]]
-- [[_COMMUNITY_Community 89|Community 89]]
-- [[_COMMUNITY_Community 90|Community 90]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `handleMessage()` - 48 edges
@@ -134,7 +132,7 @@
 ## Hyperedges (group relationships)
 - **Release automation: release-please workflow + RELEASING.md playbook + manual fallback workflow produce versioned artifacts** — workflows_release_please_workflow, docs_releasing_releasing_md, workflows_release_manual_fallback, agents_release_please, changelog_changelog_md [EXTRACTED 1.00]
 
-## Communities (91 total, 37 thin omitted)
+## Communities (89 total, 36 thin omitted)
 
 ### Community 0 - "WhatsApp MCP Test Suite"
 Cohesion: 0.11
@@ -157,8 +155,8 @@ Cohesion: 0.10
 Nodes (27): int, str, int, str, main(), normalize_tag(), read_pyproject_version(), read_server_json_versions() (+19 more)
 
 ### Community 5 - "HTTP Auth & Routing"
-Cohesion: 0.18
-Nodes (12): bool, get_chat(), list_messages(), bool, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp chat metadata by JID.      Args:         chat_jid: The JID of the c (+4 more)
+Cohesion: 0.13
+Nodes (17): bool, get_chat(), list_chats(), list_messages(), bool, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp messages matching specified criteria with optional context.      Ea, Get WhatsApp chats matching specified criteria.      Args:         query: Search (+9 more)
 
 ### Community 6 - "Bridge Token & Startup"
 Cohesion: 0.26
@@ -329,35 +327,31 @@ Cohesion: 0.33
 Nodes (6): str, get_direct_chat_by_contact(), Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho
 
 ### Community 87 - "Community 87"
-Cohesion: 0.31
-Nodes (9): log(), module_files(), int, str, Pre-warm and keep warm the WhatsApp MCP server's module files.  Launched by auto, Files a fresh interpreter reads to import everything currently loaded.      For, Read every file fully to pull its pages back into the page cache.      Returns (, rewarm() (+1 more)
+Cohesion: 0.50
+Nodes (3): log(), str, Pre-warm and hold the WhatsApp MCP server's Python module cache.  Launched by au
 
 ### Community 88 - "Community 88"
 Cohesion: 0.40
 Nodes (5): Send any audio file as a WhatsApp audio message to the specified recipient. For, Send any audio file as a WhatsApp audio message to the specified recipient. For, Send any audio file as a WhatsApp audio message to the specified recipient. For, Send any audio file as a WhatsApp audio message to the specified recipient. For, send_audio_message()
 
-### Community 89 - "Community 89"
-Cohesion: 0.40
-Nodes (5): list_chats(), Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search
-
 ## Knowledge Gaps
 - **219 isolated node(s):** `release-type`, `include-v-in-tag`, `include-component-in-tag`, `changelog-path`, `extra-files` (+214 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **36 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `downloadMedia()` connect `Go SQLite Data Types` to `WhatsApp MCP Test Suite`, `Media Path Safety`, `List Chats Tests`, `Community 76`, `LID Migration`, `Community 80`, `Community 83`?**
-  _High betweenness centrality (0.146) - this node is a cross-community bridge._
+  _High betweenness centrality (0.149) - this node is a cross-community bridge._
 - **Why does `handleMessage()` connect `Go SQLite Data Types` to `Audio Conversion & REST Auth`, `Docs & CI Architecture`?**
-  _High betweenness centrality (0.057) - this node is a cross-community bridge._
+  _High betweenness centrality (0.058) - this node is a cross-community bridge._
 - **Why does `newRESTMux()` connect `Go SQLite Data Types` to `Media Path Safety`, `Docs & CI Architecture`, `Chat Sync & Metadata`?**
   _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Are the 20 inferred relationships involving `handleMessage()` (e.g. with `SendWebhook()` and `SendWebhookWithMedia()`) actually correct?**
   _`handleMessage()` has 20 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `release-type`, `include-v-in-tag`, `include-component-in-tag` to the rest of the system?**
-  _361 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _358 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `WhatsApp MCP Test Suite` be split into smaller, more focused modules?**
   _Cohesion score 0.11092436974789915 - nodes in this community are weakly interconnected._
 - **Should `Go SQLite Data Types` be split into smaller, more focused modules?**

@@ -2340,7 +2340,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L281",
       "id": "whatsapp_mcp_server_main_list_chats",
-      "community": 89,
+      "community": 5,
       "norm_label": "list_chats()"
     },
     {
@@ -2502,7 +2502,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L288",
       "id": "whatsapp_mcp_server_main_rationale_288",
-      "community": 89,
+      "community": 5,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search"
     },
     {
@@ -2643,7 +2643,7 @@
       "label": "log()",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L31",
+      "source_location": "L20",
       "id": "whatsapp_mcp_server_warmhold_log",
       "community": 87,
       "norm_label": "log()"
@@ -2652,73 +2652,19 @@
       "label": "str",
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L31",
+      "source_location": "L20",
       "id": "whatsapp_mcp_server_warmhold_py_str",
       "community": 87,
       "norm_label": "str"
     },
     {
-      "label": "module_files()",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L36",
-      "id": "whatsapp_mcp_server_warmhold_module_files",
-      "community": 87,
-      "norm_label": "module_files()"
-    },
-    {
-      "label": "rewarm()",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L56",
-      "id": "whatsapp_mcp_server_warmhold_rewarm",
-      "community": 87,
-      "norm_label": "rewarm()"
-    },
-    {
-      "label": "int",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L56",
-      "id": "whatsapp_mcp_server_warmhold_py_int",
-      "community": 87,
-      "norm_label": "int"
-    },
-    {
-      "label": "run()",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L75",
-      "id": "whatsapp_mcp_server_warmhold_run",
-      "community": 87,
-      "norm_label": "run()"
-    },
-    {
-      "label": "Pre-warm and keep warm the WhatsApp MCP server's module files.  Launched by auto",
+      "label": "Pre-warm and hold the WhatsApp MCP server's Python module cache.  Launched by au",
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L1",
       "id": "whatsapp_mcp_server_warmhold_rationale_1",
       "community": 87,
-      "norm_label": "pre-warm and keep warm the whatsapp mcp server's module files.  launched by auto"
-    },
-    {
-      "label": "Files a fresh interpreter reads to import everything currently loaded.      For",
-      "file_type": "rationale",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L37",
-      "id": "whatsapp_mcp_server_warmhold_rationale_37",
-      "community": 87,
-      "norm_label": "files a fresh interpreter reads to import everything currently loaded.      for"
-    },
-    {
-      "label": "Read every file fully to pull its pages back into the page cache.      Returns (",
-      "file_type": "rationale",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L57",
-      "id": "whatsapp_mcp_server_warmhold_rationale_57",
-      "community": 87,
-      "norm_label": "read every file fully to pull its pages back into the page cache.      returns ("
+      "norm_label": "pre-warm and hold the whatsapp mcp server's python module cache.  launched by au"
     },
     {
       "label": "whatsapp.py",
@@ -3853,42 +3799,6 @@
       "id": "tests_test_read_file_rationale_12",
       "community": 52,
       "norm_label": "read_file only serves files under allowed roots; let tests use tmp_path."
-    },
-    {
-      "label": "test_warmhold.py",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
-      "source_location": "L1",
-      "id": "whatsapp_mcp_server_tests_test_warmhold_py",
-      "community": 90,
-      "norm_label": "test_warmhold.py"
-    },
-    {
-      "label": "test_rewarm_reads_files_and_reports_totals()",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
-      "source_location": "L8",
-      "id": "tests_test_warmhold_test_rewarm_reads_files_and_reports_totals",
-      "community": 90,
-      "norm_label": "test_rewarm_reads_files_and_reports_totals()"
-    },
-    {
-      "label": "test_module_files_includes_pyc_for_py_modules()",
-      "file_type": "code",
-      "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
-      "source_location": "L21",
-      "id": "tests_test_warmhold_test_module_files_includes_pyc_for_py_modules",
-      "community": 90,
-      "norm_label": "test_module_files_includes_pyc_for_py_modules()"
-    },
-    {
-      "label": "Tests for warmhold's page-cache rewarm helpers.",
-      "file_type": "rationale",
-      "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
-      "source_location": "L1",
-      "id": "tests_test_warmhold_rationale_1",
-      "community": 90,
-      "norm_label": "tests for warmhold's page-cache rewarm helpers."
     },
     {
       "label": "test_whatsapp.py",
@@ -6136,7 +6046,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L268",
-      "community": 89,
+      "community": 5,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search",
       "id": "whatsapp_mcp_server_main_rationale_268"
     },
@@ -6271,7 +6181,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L239",
-      "community": 89,
+      "community": 5,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search",
       "id": "whatsapp_mcp_server_main_rationale_239"
     },
@@ -6694,7 +6604,7 @@
       "file_type": "rationale",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L224",
-      "community": 89,
+      "community": 5,
       "norm_label": "get whatsapp chats matching specified criteria.      args:         query: search",
       "id": "whatsapp_mcp_server_main_rationale_224"
     },
@@ -21297,38 +21207,8 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_py",
-      "target": "whatsapp_mcp_server_warmhold_log"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_py",
-      "target": "whatsapp_mcp_server_warmhold_module_files",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_py",
-      "target": "whatsapp_mcp_server_warmhold_rewarm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L75",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_py",
-      "target": "whatsapp_mcp_server_warmhold_run",
+      "target": "whatsapp_mcp_server_warmhold_log",
       "confidence_score": 1.0
     },
     {
@@ -21337,9 +21217,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_rationale_1",
-      "target": "whatsapp_mcp_server_warmhold_py"
+      "target": "whatsapp_mcp_server_warmhold_py",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -21348,94 +21228,8 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_log",
-      "target": "whatsapp_mcp_server_warmhold_py_str"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L76",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_run",
-      "target": "whatsapp_mcp_server_warmhold_log",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_module_files",
       "target": "whatsapp_mcp_server_warmhold_py_str",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_rewarm",
-      "target": "whatsapp_mcp_server_warmhold_py_str",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_rationale_37",
-      "target": "whatsapp_mcp_server_warmhold_module_files",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L85",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_run",
-      "target": "whatsapp_mcp_server_warmhold_module_files",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L57",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_rationale_57",
-      "target": "whatsapp_mcp_server_warmhold_rewarm",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_rewarm",
-      "target": "whatsapp_mcp_server_warmhold_py_int",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/warmhold.py",
-      "source_location": "L86",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_warmhold_run",
-      "target": "whatsapp_mcp_server_warmhold_rewarm",
       "confidence_score": 1.0
     },
     {
@@ -25606,36 +25400,6 @@
       "confidence_score": 1.0,
       "source": "tests_test_read_file_rationale_12",
       "target": "tests_test_read_file_allow_tmp_reads"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "tests_test_warmhold_rationale_1",
-      "target": "whatsapp_mcp_server_tests_test_warmhold_py",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_tests_test_warmhold_py",
-      "target": "tests_test_warmhold_test_module_files_includes_pyc_for_py_modules",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "whatsapp_mcp_server_tests_test_warmhold_py",
-      "target": "tests_test_warmhold_test_rewarm_reads_files_and_reports_totals",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -30213,5 +29977,5 @@
       "source_file": "CHANGELOG.md"
     }
   ],
-  "built_at_commit": "d3e87d1eff88a3b8d595589bc8ae4ff57a59a9a6"
+  "built_at_commit": "9266721d35d19f33c83d9e6fdbf0772ee26a7870"
 }
