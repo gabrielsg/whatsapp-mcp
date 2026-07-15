@@ -26,7 +26,10 @@ $mediaRoots = "/home/gabriel/.local/share/whatsapp-mcp/outbox:/mnt/c/Users/gabri
 # survive until Claude Desktop spawned the server (2026-07-05 cold boot:
 # import still took 40s, 13 minutes after login). warmhold.py imports the
 # real server module (full dependency set), logs timings to
-# %TEMP%\venv-warmup.log, and sleeps forever so the module pages stay mapped.
+# %TEMP%\venv-warmup.log, and then re-reads every loaded module file every
+# 5 minutes: holding modules in its own heap is not enough, because each
+# fresh server spawn re-reads the files from disk and the small WSL page
+# cache evicts them within hours (observed 2026-07-14).
 # The bash below waits for /mnt/c to be mounted, then replaces any holder
 # left over from a previous session (the "$p" != "$$" guard keeps it from
 # killing itself, since this command line also contains "warmhold.py").
