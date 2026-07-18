@@ -1418,6 +1418,12 @@ func senderAltForMessage(client *whatsmeow.Client, info types.MessageInfo) types
 	return types.EmptyJID
 }
 
+// isStatusBroadcast reports whether a chat is WhatsApp's Status pseudo-chat
+// (status@broadcast), which delivers every contact's 24-hour Status posts.
+func isStatusBroadcast(chat types.JID) bool {
+	return chat == types.StatusBroadcastJID
+}
+
 // Handle regular incoming messages with media support
 func handleMessage(client *whatsmeow.Client, messageStore *MessageStore, msg *events.Message, logger waLog.Logger) {
 	defer func() {
@@ -1425,6 +1431,12 @@ func handleMessage(client *whatsmeow.Client, messageStore *MessageStore, msg *ev
 			logger.Errorf("handleMessage panic (message dropped): %v", r)
 		}
 	}()
+	// Ignore contact Status posts entirely: they expire in 24h, are never
+	// queried via MCP, and auto-downloading their media filled the store
+	// with gigabytes of dead files (2.7 GB by 2026-07-18).
+	if isStatusBroadcast(msg.Info.Chat) {
+		return
+	}
 	// Resolve LID-based chats to phone-based JIDs so that incoming
 	// and outgoing messages land in the same chat entry.
 	resolvedChat := resolveLIDChat(client, msg.Info.Chat, msg.Info.SenderAlt, msg.Info.RecipientAlt, msg.Info.IsFromMe)
