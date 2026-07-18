@@ -958,19 +958,10 @@
       "norm_label": "messageinfo"
     },
     {
-      "label": "isStatusBroadcast()",
-      "file_type": "code",
-      "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1423",
-      "id": "whatsapp_bridge_main_isstatusbroadcast",
-      "community": 1,
-      "norm_label": "isstatusbroadcast()"
-    },
-    {
       "label": "handleMessage()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1428",
+      "source_location": "L1422",
       "id": "whatsapp_bridge_main_handlemessage",
       "community": 1,
       "norm_label": "handlemessage()"
@@ -979,7 +970,7 @@
       "label": "DownloadMediaRequest",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1600",
+      "source_location": "L1588",
       "id": "whatsapp_bridge_downloadmediarequest",
       "community": 1,
       "norm_label": "downloadmediarequest"
@@ -988,7 +979,7 @@
       "label": "DownloadMediaResponse",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1606",
+      "source_location": "L1594",
       "id": "whatsapp_bridge_downloadmediaresponse",
       "community": 1,
       "norm_label": "downloadmediaresponse"
@@ -997,7 +988,7 @@
       "label": "ResolveResponse",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1614",
+      "source_location": "L1602",
       "id": "whatsapp_bridge_resolveresponse",
       "community": 1,
       "norm_label": "resolveresponse"
@@ -1006,7 +997,7 @@
       "label": ".StoreMediaInfo()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1621",
+      "source_location": "L1609",
       "id": "whatsapp_bridge_messagestore_storemediainfo",
       "community": 1,
       "norm_label": ".storemediainfo()"
@@ -1015,7 +1006,7 @@
       "label": ".GetMediaInfo()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1630",
+      "source_location": "L1618",
       "id": "whatsapp_bridge_messagestore_getmediainfo",
       "community": 1,
       "norm_label": ".getmediainfo()"
@@ -1024,7 +1015,7 @@
       "label": "MediaDownloader",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1644",
+      "source_location": "L1632",
       "id": "whatsapp_bridge_mediadownloader",
       "community": 1,
       "norm_label": "mediadownloader"
@@ -1033,7 +1024,7 @@
       "label": ".GetDirectPath()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1655",
+      "source_location": "L1643",
       "id": "whatsapp_bridge_mediadownloader_getdirectpath",
       "community": 1,
       "norm_label": ".getdirectpath()"
@@ -1042,7 +1033,7 @@
       "label": ".GetURL()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1660",
+      "source_location": "L1648",
       "id": "whatsapp_bridge_mediadownloader_geturl",
       "community": 1,
       "norm_label": ".geturl()"
@@ -1051,7 +1042,7 @@
       "label": ".GetMediaKey()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1665",
+      "source_location": "L1653",
       "id": "whatsapp_bridge_mediadownloader_getmediakey",
       "community": 1,
       "norm_label": ".getmediakey()"
@@ -1060,7 +1051,7 @@
       "label": ".GetFileLength()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1670",
+      "source_location": "L1658",
       "id": "whatsapp_bridge_mediadownloader_getfilelength",
       "community": 1,
       "norm_label": ".getfilelength()"
@@ -1069,7 +1060,7 @@
       "label": ".GetFileSHA256()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1675",
+      "source_location": "L1663",
       "id": "whatsapp_bridge_mediadownloader_getfilesha256",
       "community": 1,
       "norm_label": ".getfilesha256()"
@@ -1078,7 +1069,7 @@
       "label": ".GetFileEncSHA256()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1680",
+      "source_location": "L1668",
       "id": "whatsapp_bridge_mediadownloader_getfileencsha256",
       "community": 1,
       "norm_label": ".getfileencsha256()"
@@ -1087,7 +1078,7 @@
       "label": ".GetMediaType()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1685",
+      "source_location": "L1673",
       "id": "whatsapp_bridge_mediadownloader_getmediatype",
       "community": 1,
       "norm_label": ".getmediatype()"
@@ -1096,7 +1087,7 @@
       "label": "downloadMedia()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1690",
+      "source_location": "L1678",
       "id": "whatsapp_bridge_main_downloadmedia",
       "community": 1,
       "norm_label": "downloadmedia()"
@@ -1105,7 +1096,7 @@
       "label": "extractDirectPathFromURL()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1796",
+      "source_location": "L1784",
       "id": "whatsapp_bridge_main_extractdirectpathfromurl",
       "community": 1,
       "norm_label": "extractdirectpathfromurl()"
@@ -1114,7 +1105,7 @@
       "label": "newRESTMux()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1816",
+      "source_location": "L1804",
       "id": "whatsapp_bridge_main_newrestmux",
       "community": 1,
       "norm_label": "newrestmux()"
@@ -1123,7 +1114,7 @@
       "label": "ServeMux",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1816",
+      "source_location": "L1804",
       "id": "servemux",
       "community": 1,
       "norm_label": "servemux"
@@ -1132,7 +1123,7 @@
       "label": "startRESTServer()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2127",
+      "source_location": "L2115",
       "id": "whatsapp_bridge_main_startrestserver",
       "community": 1,
       "norm_label": "startrestserver()"
@@ -1141,7 +1132,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2152",
+      "source_location": "L2140",
       "id": "whatsapp_bridge_main_main",
       "community": 1,
       "norm_label": "main()"
@@ -1150,7 +1141,7 @@
       "label": "GetChatName()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2555",
+      "source_location": "L2543",
       "id": "whatsapp_bridge_main_getchatname",
       "community": 1,
       "norm_label": "getchatname()"
@@ -1159,7 +1150,7 @@
       "label": "callChatJID()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2649",
+      "source_location": "L2637",
       "id": "whatsapp_bridge_main_callchatjid",
       "community": 1,
       "norm_label": "callchatjid()"
@@ -1168,7 +1159,7 @@
       "label": "BasicCallMeta",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2649",
+      "source_location": "L2637",
       "id": "basiccallmeta",
       "community": 1,
       "norm_label": "basiccallmeta"
@@ -1177,7 +1168,7 @@
       "label": "handleCallOffer()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2663",
+      "source_location": "L2651",
       "id": "whatsapp_bridge_main_handlecalloffer",
       "community": 1,
       "norm_label": "handlecalloffer()"
@@ -1186,7 +1177,7 @@
       "label": "handleHistorySync()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2693",
+      "source_location": "L2681",
       "id": "whatsapp_bridge_main_handlehistorysync",
       "community": 1,
       "norm_label": "handlehistorysync()"
@@ -1195,7 +1186,7 @@
       "label": "HistorySync",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2693",
+      "source_location": "L2681",
       "id": "historysync",
       "community": 1,
       "norm_label": "historysync"
@@ -1204,7 +1195,7 @@
       "label": "analyzeOggOpus()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2885",
+      "source_location": "L2873",
       "id": "whatsapp_bridge_main_analyzeoggopus",
       "community": 1,
       "norm_label": "analyzeoggopus()"
@@ -1213,7 +1204,7 @@
       "label": "min()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L2992",
+      "source_location": "L2980",
       "id": "whatsapp_bridge_main_min",
       "community": 1,
       "norm_label": "min()"
@@ -1222,7 +1213,7 @@
       "label": "placeholderWaveform()",
       "file_type": "code",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L3001",
+      "source_location": "L2989",
       "id": "whatsapp_bridge_main_placeholderwaveform",
       "community": 1,
       "norm_label": "placeholderwaveform()"
@@ -2092,33 +2083,6 @@
       "norm_label": "testresolvemediarootsacceptsenvlist()"
     },
     {
-      "label": "status_broadcast_test.go",
-      "file_type": "code",
-      "source_file": "whatsapp-bridge/status_broadcast_test.go",
-      "source_location": "L1",
-      "id": "whatsapp_bridge_status_broadcast_test_go",
-      "community": 1,
-      "norm_label": "status_broadcast_test.go"
-    },
-    {
-      "label": "TestIsStatusBroadcast()",
-      "file_type": "code",
-      "source_file": "whatsapp-bridge/status_broadcast_test.go",
-      "source_location": "L9",
-      "id": "whatsapp_bridge_status_broadcast_test_testisstatusbroadcast",
-      "community": 1,
-      "norm_label": "testisstatusbroadcast()"
-    },
-    {
-      "label": "T",
-      "file_type": "code",
-      "source_file": "whatsapp-bridge/status_broadcast_test.go",
-      "source_location": "L9",
-      "id": "whatsapp_bridge_status_broadcast_test_go_t",
-      "community": 1,
-      "norm_label": "t"
-    },
-    {
       "label": "webhook.go",
       "file_type": "code",
       "source_file": "whatsapp-bridge/webhook.go",
@@ -2322,7 +2286,7 @@
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L119",
       "id": "whatsapp_mcp_server_main_py_any",
-      "community": 81,
+      "community": 83,
       "norm_label": "any"
     },
     {
@@ -6667,7 +6631,7 @@
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L55",
-      "community": 82,
+      "community": 86,
       "norm_label": "str",
       "id": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py_str"
     },
@@ -6676,7 +6640,7 @@
       "file_type": "code",
       "source_file": "whatsapp-mcp-server/main.py",
       "source_location": "L55",
-      "community": 86,
+      "community": 81,
       "norm_label": "any",
       "id": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_mcp_server_main_py_any"
     },
@@ -10754,16 +10718,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1423",
-      "weight": 1.0,
-      "source": "whatsapp_bridge_main_go",
-      "target": "whatsapp_bridge_main_isstatusbroadcast",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-bridge/main.go",
       "source_location": "L2119",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12664,17 +12618,6 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1423",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "source": "whatsapp_bridge_main_isstatusbroadcast",
-      "target": "whatsapp_bridge_main_go_jid",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-bridge/main.go",
       "source_location": "L1325",
       "weight": 1.0,
       "context": "return_type",
@@ -13088,28 +13031,6 @@
       "confidence_score": 1.0,
       "source": "whatsapp_bridge_main_senderaltformessage",
       "target": "mnt_c_users_gabri_projects_whatsapp_bridge_whatsapp_bridge_main_go_jid"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-bridge/main.go",
-      "source_location": "L1437",
-      "weight": 1.0,
-      "source": "whatsapp_bridge_main_handlemessage",
-      "target": "whatsapp_bridge_main_isstatusbroadcast",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "whatsapp-bridge/status_broadcast_test.go",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "whatsapp_bridge_status_broadcast_test_testisstatusbroadcast",
-      "target": "whatsapp_bridge_main_isstatusbroadcast"
     },
     {
       "relation": "contains",
@@ -19270,27 +19191,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "whatsapp-bridge/status_broadcast_test.go",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "whatsapp_bridge_status_broadcast_test_go",
-      "target": "whatsapp_bridge_status_broadcast_test_testisstatusbroadcast",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "whatsapp-bridge/status_broadcast_test.go",
-      "source_location": "L9",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "source": "whatsapp_bridge_status_broadcast_test_testisstatusbroadcast",
-      "target": "whatsapp_bridge_status_broadcast_test_go_t",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "whatsapp-bridge/webhook.go",
       "source_location": "L78",
       "weight": 1.0,
@@ -21407,9 +21307,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L36",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_py",
-      "target": "whatsapp_mcp_server_warmhold_module_files"
+      "target": "whatsapp_mcp_server_warmhold_module_files",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -21417,9 +21317,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L56",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_py",
-      "target": "whatsapp_mcp_server_warmhold_rewarm"
+      "target": "whatsapp_mcp_server_warmhold_rewarm",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -21427,9 +21327,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L75",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_py",
-      "target": "whatsapp_mcp_server_warmhold_run"
+      "target": "whatsapp_mcp_server_warmhold_run",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -21459,9 +21359,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L76",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_run",
-      "target": "whatsapp_mcp_server_warmhold_log"
+      "target": "whatsapp_mcp_server_warmhold_log",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -21470,9 +21370,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L36",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_module_files",
-      "target": "whatsapp_mcp_server_warmhold_py_str"
+      "target": "whatsapp_mcp_server_warmhold_py_str",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -21481,9 +21381,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L56",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_rewarm",
-      "target": "whatsapp_mcp_server_warmhold_py_str"
+      "target": "whatsapp_mcp_server_warmhold_py_str",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -21491,9 +21391,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L37",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_rationale_37",
-      "target": "whatsapp_mcp_server_warmhold_module_files"
+      "target": "whatsapp_mcp_server_warmhold_module_files",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -21502,9 +21402,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L85",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_run",
-      "target": "whatsapp_mcp_server_warmhold_module_files"
+      "target": "whatsapp_mcp_server_warmhold_module_files",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -21512,9 +21412,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L57",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_rationale_57",
-      "target": "whatsapp_mcp_server_warmhold_rewarm"
+      "target": "whatsapp_mcp_server_warmhold_rewarm",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -21523,9 +21423,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L56",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_rewarm",
-      "target": "whatsapp_mcp_server_warmhold_py_int"
+      "target": "whatsapp_mcp_server_warmhold_py_int",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -21534,9 +21434,9 @@
       "source_file": "whatsapp-mcp-server/warmhold.py",
       "source_location": "L86",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_warmhold_run",
-      "target": "whatsapp_mcp_server_warmhold_rewarm"
+      "target": "whatsapp_mcp_server_warmhold_rewarm",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25713,9 +25613,9 @@
       "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "tests_test_warmhold_rationale_1",
-      "target": "whatsapp_mcp_server_tests_test_warmhold_py"
+      "target": "whatsapp_mcp_server_tests_test_warmhold_py",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25723,9 +25623,9 @@
       "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
       "source_location": "L21",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_tests_test_warmhold_py",
-      "target": "tests_test_warmhold_test_module_files_includes_pyc_for_py_modules"
+      "target": "tests_test_warmhold_test_module_files_includes_pyc_for_py_modules",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25733,9 +25633,9 @@
       "source_file": "whatsapp-mcp-server/tests/test_warmhold.py",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "whatsapp_mcp_server_tests_test_warmhold_py",
-      "target": "tests_test_warmhold_test_rewarm_reads_files_and_reports_totals"
+      "target": "tests_test_warmhold_test_rewarm_reads_files_and_reports_totals",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -30313,5 +30213,5 @@
       "source_file": "CHANGELOG.md"
     }
   ],
-  "built_at_commit": "ce36fa11eb1ae4c207c6a655f0849c9dd6f4d0f5"
+  "built_at_commit": "d3e87d1eff88a3b8d595589bc8ae4ff57a59a9a6"
 }

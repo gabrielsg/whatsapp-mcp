@@ -1,16 +1,16 @@
-# Graph Report - whatsapp-bridge  (2026-07-18)
+# Graph Report - whatsapp-bridge  (2026-07-15)
 
 ## Corpus Check
-- 51 files · ~160,416 words
+- 50 files · ~160,284 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 951 nodes · 2026 edges · 91 communities (54 shown, 37 thin omitted)
-- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 138 edges (avg confidence: 0.77)
+- 947 nodes · 2020 edges · 91 communities (54 shown, 37 thin omitted)
+- Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 137 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ce36fa11`
+- Built from commit: `d3e87d1e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -105,7 +105,7 @@
 - [[_COMMUNITY_Community 90|Community 90]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `handleMessage()` - 49 edges
+1. `handleMessage()` - 48 edges
 2. `T` - 43 edges
 3. `T` - 43 edges
 4. `newTestMessageStore()` - 42 edges
@@ -141,8 +141,8 @@ Cohesion: 0.11
 Nodes (34): Any, bool, int, bool, str, store/messages.db (SQLite), format_message(), format_messages_list() (+26 more)
 
 ### Community 1 - "Go SQLite Data Types"
-Cohesion: 0.06
-Nodes (73): BasicCallMeta, Disappearing-message (ephemeral) settings tracking, LID-to-phone JID resolution, ContextInfo, DB, DisappearingMode, HistorySync, MediaType (+65 more)
+Cohesion: 0.07
+Nodes (70): BasicCallMeta, Disappearing-message (ephemeral) settings tracking, LID-to-phone JID resolution, ContextInfo, DB, DisappearingMode, HistorySync, MediaType (+62 more)
 
 ### Community 2 - "Docs & CI Architecture"
 Cohesion: 0.11
@@ -306,15 +306,15 @@ Nodes (10): Path, _allowed_read_roots(), str, Read a downloaded WhatsApp media f
 
 ### Community 81 - "Community 81"
 Cohesion: 0.22
-Nodes (10): get_contact(), Any, Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Look up a WhatsApp contact by phone number, LID, or full JID.      Automatically, Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Look up a WhatsApp contact by phone number, LID, or full JID.      Automatically, Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Search WhatsApp contacts by name or phone number.      Args:         query: Sear (+2 more)
+Nodes (10): Any, get_contact(), Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Look up a WhatsApp contact by phone number, LID, or full JID.      Automatically, Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Look up a WhatsApp contact by phone number, LID, or full JID.      Automatically, Search WhatsApp contacts by name or phone number.      Args:         query: Sear, Search WhatsApp contacts by name or phone number.      Args:         query: Sear (+2 more)
 
 ### Community 82 - "Community 82"
-Cohesion: 0.33
-Nodes (6): str, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, send_file()
+Cohesion: 0.40
+Nodes (5): Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, Send a file such as a picture, raw audio, video or document via WhatsApp to the, send_file()
 
 ### Community 83 - "Community 83"
-Cohesion: 0.40
-Nodes (5): get_bridge_status(), Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use, Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use, Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use, Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use
+Cohesion: 0.33
+Nodes (6): get_bridge_status(), Any, Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use, Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use, Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use, Check whether the WhatsApp bridge is running and connected to WhatsApp.      Use
 
 ### Community 84 - "Community 84"
 Cohesion: 0.40
@@ -326,7 +326,7 @@ Nodes (5): get_last_interaction(), Get most recent WhatsApp message involving th
 
 ### Community 86 - "Community 86"
 Cohesion: 0.33
-Nodes (6): Any, get_direct_chat_by_contact(), Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho
+Nodes (6): str, get_direct_chat_by_contact(), Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho, Get WhatsApp chat metadata by sender phone number.      Args:         sender_pho
 
 ### Community 87 - "Community 87"
 Cohesion: 0.31
@@ -341,24 +341,24 @@ Cohesion: 0.40
 Nodes (5): list_chats(), Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search, Get WhatsApp chats matching specified criteria.      Args:         query: Search
 
 ## Knowledge Gaps
-- **220 isolated node(s):** `release-type`, `include-v-in-tag`, `include-component-in-tag`, `changelog-path`, `extra-files` (+215 more)
+- **219 isolated node(s):** `release-type`, `include-v-in-tag`, `include-component-in-tag`, `changelog-path`, `extra-files` (+214 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **37 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `downloadMedia()` connect `Go SQLite Data Types` to `WhatsApp MCP Test Suite`, `Media Path Safety`, `List Chats Tests`, `Community 76`, `LID Migration`, `Community 80`, `Community 81`?**
-  _High betweenness centrality (0.147) - this node is a cross-community bridge._
+- **Why does `downloadMedia()` connect `Go SQLite Data Types` to `WhatsApp MCP Test Suite`, `Media Path Safety`, `List Chats Tests`, `Community 76`, `LID Migration`, `Community 80`, `Community 83`?**
+  _High betweenness centrality (0.146) - this node is a cross-community bridge._
 - **Why does `handleMessage()` connect `Go SQLite Data Types` to `Audio Conversion & REST Auth`, `Docs & CI Architecture`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
+  _High betweenness centrality (0.057) - this node is a cross-community bridge._
 - **Why does `newRESTMux()` connect `Go SQLite Data Types` to `Media Path Safety`, `Docs & CI Architecture`, `Chat Sync & Metadata`?**
   _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Are the 20 inferred relationships involving `handleMessage()` (e.g. with `SendWebhook()` and `SendWebhookWithMedia()`) actually correct?**
   _`handleMessage()` has 20 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `release-type`, `include-v-in-tag`, `include-component-in-tag` to the rest of the system?**
-  _362 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _361 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `WhatsApp MCP Test Suite` be split into smaller, more focused modules?**
   _Cohesion score 0.11092436974789915 - nodes in this community are weakly interconnected._
 - **Should `Go SQLite Data Types` be split into smaller, more focused modules?**
-  _Cohesion score 0.06222222222222222 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0662280701754386 - nodes in this community are weakly interconnected._
