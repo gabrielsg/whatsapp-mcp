@@ -14,6 +14,13 @@ loaded module files (source + bytecode cache) every REWARM_INTERVAL
 seconds — milliseconds when the cache is warm, one logged slow pass when
 it had been evicted.
 
+The minutes right after login are the highest-risk window: WSL itself is
+still settling and the bridge is doing its initial contact/history sync,
+so eviction is more likely to land right under a Claude Desktop MCP spawn
+(observed 2026-07-19: eviction at 20:31, initialize timeout at 20:27-28,
+same boot). During BOOT_WINDOW seconds after warmup start, rewarm on the
+tighter BOOT_INTERVAL instead of REWARM_INTERVAL to shrink that gap.
+
 Every run appends to %TEMP%\\venv-warmup.log on the Windows side so a
 failed or slow warmup is diagnosable after the fact.
 """
@@ -24,7 +31,9 @@ import sys
 import time
 
 LOG = "/mnt/c/Users/gabri/AppData/Local/Temp/venv-warmup.log"
-REWARM_INTERVAL = 300  # seconds between page-cache refresh passes
+REWARM_INTERVAL = 300  # steady-state seconds between page-cache refresh passes
+BOOT_INTERVAL = 30  # tighter interval right after login, when eviction is likeliest
+BOOT_WINDOW = 900  # seconds after warmup start during which BOOT_INTERVAL applies
 SLOW_REWARM = 1.0  # log a pass only when it took this long (cache was evicted)
 
 
@@ -84,10 +93,15 @@ def run() -> None:
 
     paths = module_files()
     read, total = rewarm(paths)
-    log(f"rewarm loop: {read} files, {total / 1e6:.1f} MB every {REWARM_INTERVAL}s")
+    log(
+        f"rewarm loop: {read} files, {total / 1e6:.1f} MB, "
+        f"every {BOOT_INTERVAL}s for the first {BOOT_WINDOW}s then every {REWARM_INTERVAL}s"
+    )
 
+    start = time.time()
     while True:
-        time.sleep(REWARM_INTERVAL)
+        in_boot_window = time.time() - start < BOOT_WINDOW
+        time.sleep(BOOT_INTERVAL if in_boot_window else REWARM_INTERVAL)
         t0 = time.time()
         read, total = rewarm(paths)
         elapsed = time.time() - t0
